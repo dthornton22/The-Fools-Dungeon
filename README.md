@@ -1,1 +1,6 @@
-nothin here yet- this could be a dungeon crawler, interactive story teller, social sim, whatever.
+# UAH CS 321 FA 20
+Potential Project Ideas
+- Dungeon crawler
+- Interactive story teller
+- Social sim
+- The possibilities are endless!

@@ -23,7 +23,7 @@ There will be five basic components (in addition to the model for your "somethin
 #### Text Formatting and Processing
 But what about that processing part? This will vary by project. For example, you might want to search your documents for key words or phrases and then display them or you might want to make substitution when the text is displayed. Or you might want to assemble data into a formatted text document. We will need to investigate this.
 * You might want to check Apache Commons in general, but more specifically for this part of the project Commons Text might be helpful. https://commons.apache.org/proper/commons‐text
-* If your interest is text processing you might try http://www.gutenberg.org for source material.
+* If your interest is text processing, you might try http://www.gutenberg.org for source material.
 
 #### Graphics sampled or constructive with manipulation or animation
 What goes better with nice looking text than some nice graphics?

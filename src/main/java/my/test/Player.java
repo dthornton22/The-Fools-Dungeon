@@ -1,7 +1,7 @@
 /*
  * Player.java
- * Team 9
- * Creates the Player class for the user-controlled dungeon crawler
+ * CS 321 Team 9 Fall 2020
+ * Creates the Player class
  * and its actions.
  */
 import java.util.*;

@@ -1,7 +1,7 @@
 /*
  * Enemy.java
- * CS 321 Team 9
- * creates the Enemy class
+ * CS 321 Team 9 Fall 2020
+ * Creates the Enemy class
  */
 
 import java.util.*;

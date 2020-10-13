@@ -1,4 +1,4 @@
 # UAH CS 321 FA 20
 ![Java CI](https://github.com/dthornton22/team-9-project-cs-321-01/workflows/Java%20CI/badge.svg?branch=master)
 
-- Dungeon crawler
+- Use case walkthrough: The user will start the game and be prompted to enter their name. After the user enters their name, the game will display the instructions, current user score, and leaderboard. The player will appear on the map and begin looking for an enemy. Once the user finds the enemy, they will fight it, dealing and receiving damage, which will be displayed by the healthbars. Once the enemy is defeated, loot will drop and be displayed on screen; the user score will also increase. The user will continue looking for enemies and loot until they find and defeat the boss. The final score and leaderboard will be displayed on the endscreen after the boss is defeated.

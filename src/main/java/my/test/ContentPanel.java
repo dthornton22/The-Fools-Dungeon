@@ -19,61 +19,61 @@ import javax.swing.JPanel;
  */
 public class ContentPanel extends JPanel implements ActionListener{
  
-    /**
-     * Constructs the panel of the application where the
-     * GUI items will be and the user will interact with
-     */
-    public ContentPanel() {
-        /**
-         * Panel dimensions and attributes
-         * layout null so items determine placement 
-         * individually
-         * arbitrary initial dimensions on personal computer
-         */
-        Dimension dim = new Dimension(1200, 600);
-        setMinimumSize(dim);
-        setPreferredSize(dim);
-        setLayout(null);
-        setBackground(Color.white);
-        
-        /**
-         * Label placement and attributes
-         * add to panel for display
-         * arbitrary initial dimensions on personal computer
-         */
-        contentLabel = new JLabel("Splash Screen");
-        Dimension size = contentLabel.getPreferredSize();
-        contentLabel.setBounds(540, 260, size.width, size.height);
-        add(contentLabel);
-        
-        /**
-         * Button placement and attributes
-         * add to panel for display
-         * arbitrary initial dimensions on personal computer
-         */
-        start = new JButton("Start Game");
-        start.addActionListener(this);
-        size = start.getPreferredSize();
-        start.setBounds(535, 285, size.width, size.height);
-        add(start);
-    }
-    /**
-     * Method for actions to be performed on button click
-     * Has to be overridden from ActionListener interface
-     * parameter e is input action click
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
+	/**
+	 * Constructs the panel of the application where the
+	 * GUI items will be and the user will interact with
+	 */
+	public ContentPanel() {
+		/**
+		 * Panel dimensions and attributes
+		 * layout null so items determine placement 
+		 * individually
+		 * arbitrary initial dimensions on personal computer
+		 */
+		Dimension dim = new Dimension(1200, 600);
+		setMinimumSize(dim);
+		setPreferredSize(dim);
+		setLayout(null);
+		setBackground(Color.white);
+		
+		/**
+		 * Label placement and attributes
+		 * add to panel for display
+		 * arbitrary initial dimensions on personal computer
+		 */
+		contentLabel = new JLabel("Splash Screen");
+		Dimension size = contentLabel.getPreferredSize();
+		contentLabel.setBounds(540, 260, size.width, size.height);
+		add(contentLabel);
+		
+		/**
+		 * Button placement and attributes
+		 * add to panel for display
+		 * arbitrary initial dimensions on personal computer
+		 */
+		start = new JButton("Start Game");
+		start.addActionListener(this);
+		size = start.getPreferredSize();
+		start.setBounds(535, 285, size.width, size.height);
+		add(start);
+	}
+	/**
+	 * Method for actions to be performed on button click
+	 * Has to be overridden from ActionListener interface
+	 * parameter e is input action click
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
 
-    }
-    /**
-     * Panel button to start the game when clicked
-     */
-    private final JButton start;
-    
-    /**
-     * Panel label to display
-     */
-    private final JLabel contentLabel;
+	}
+	/**
+	 * Panel button to start the game when clicked
+	 */
+	private final JButton start;
+	
+	/**
+	 * Panel label to display
+	 */
+	private final JLabel contentLabel;
 
 }

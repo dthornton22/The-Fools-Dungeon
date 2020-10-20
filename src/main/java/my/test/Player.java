@@ -24,7 +24,7 @@ public class Player
 		{
 			//case east
 			case 0:
-				if(!isWall(location[0], location[1] + 1))
+				if(!isWall(location[0], (location[1] + 1)))
 				{
 					location[1] += 1;
 				}
@@ -38,7 +38,7 @@ public class Player
 				break;
 			//case west
 			case 2:
-				if(!isWall(location[0], location[1] + 1))
+				if(!isWall(location[0], (location[1] + 1)))
 				{
 					location[1] += 1;
 				}

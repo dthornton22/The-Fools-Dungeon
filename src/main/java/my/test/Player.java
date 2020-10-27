@@ -95,13 +95,21 @@ public class Player
 	 */
 	public int getScore()
 	{
-		return score;
+		return Score;
 	}
 	
 	public void changeScore()
 	{
 		
 	}
+        
+        /**
+	 * Player's function getName returns the player's name
+	 */
+        public String getName()
+        {
+            return Name;
+        }
 	
 	/**
 	 * Player's field location stores the location of
@@ -115,7 +123,15 @@ public class Player
 	 */
 	private int health;
 	/**
-	 * Player's field score represents the player's score
+	 * Player's field Score represents the player's score
 	 */
-	private int score;
+	private int Score;
+        /**
+	 * Player's field Name represents the player's name
+	 */
+        private String Name;
+        /**
+	 * Player's field index represents ??? what is this hannah
+	 */
+        private int Index;
 }

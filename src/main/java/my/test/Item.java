@@ -15,7 +15,6 @@ public class Item {
 	//Variable Declarations
 	private int weaponStrength;
 	private int armorDefense;
-   
 
 	/** This function creates the strength modifier on a weapon
 	 *  it takes an input of the current damage modifier on
@@ -26,8 +25,8 @@ public class Item {
 	private void setWeaponStrength(int currentStrength)
 	{
 		Random rand = new Random();
-		int n = rand.nextInt(10);				   // Change this number as needed
-		weaponStrength = currentStrength + n;   // Current weapon strength + random number
+		int n = rand.nextInt(10);				// Change this number as needed
+		weaponStrength = currentStrength + n;	// Current weapon strength + random number
 	}
 	
 	/**
@@ -106,7 +105,7 @@ public class Item {
 	{
 		Random rand = new Random();
 		int n = rand.nextInt(2);			// I cant recall if it indexes from 0, adjust as needed
-		return n;						   // This return will be given to a function that generates the item
+		return n;							// This return will be given to a function that generates the item
 	}
 	
 	/**

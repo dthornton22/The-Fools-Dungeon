@@ -3,7 +3,7 @@
  * CS 321 Team 9 Fall 2020
  * Creates the Map class
  */
-package main.java.my.test;	   
+package main.java.my.test;
 
 public class Map {
 	

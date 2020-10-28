@@ -102,14 +102,14 @@ public class Player
 	{
 		
 	}
-        
-        /**
+		
+		/**
 	 * Player's function getName returns the player's name
 	 */
-        public String getName()
-        {
-            return Name;
-        }
+		public String getName()
+		{
+			return Name;
+		}
 	
 	/**
 	 * Player's field location stores the location of
@@ -126,12 +126,12 @@ public class Player
 	 * Player's field Score represents the player's score
 	 */
 	private int Score;
-        /**
+		/**
 	 * Player's field Name represents the player's name
 	 */
-        private String Name;
-        /**
+		private String Name;
+		/**
 	 * Player's field index represents ??? what is this hannah
 	 */
-        private int Index;
+		private int Index;
 }

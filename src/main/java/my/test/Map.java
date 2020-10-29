@@ -2,6 +2,7 @@
  * Map.java
  * CS 321 Team 9 Fall 2020
  * Creates the Map class
+ * Apart of main.java.my.test package so it can use other classes in package
  */
 package main.java.my.test;
 
@@ -37,9 +38,9 @@ public class Map {
 	}
 	
 	/**
-	 * Create obstacles at specific locations for map
+	 * Create obstacles at specific locations for map according to grid
 	 */
-	public boolean obstacle(){
+	public boolean isWall(int x, int y){
 		return false;
 	}
 	/**
@@ -50,5 +51,5 @@ public class Map {
 	/**
 	 * Map grid constraint constant for map size
 	 */
-	private final int MAPBOUNDS = 10;
+	private final int MAPBOUNDS = 8;
 }

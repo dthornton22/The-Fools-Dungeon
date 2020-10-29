@@ -1,12 +1,10 @@
 /*
- * @author Brandon Jett
- * Latest Date Modified: Oct 27, 2020
- * 
- * This class creates item objects that modify the players various values or
- * helps them in some way such as a health pack. 
- * 
+ * Item.java
+ * CS 321 Team 9 Fall 2020
+ * Creates the Item class for random item placement
+ * Apart of main.java.my.test package so it can use other classes in package
  */
-package item;
+package main.java.my.test;
 import java.util.Random;
 
 

@@ -1,15 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * LeaderBoard.java
+ * CS 321 Team 9 Fall 2020
+ * Creates the LeaderBoard class for score calculation
+ * Apart of main.java.my.test package so it can use other classes in package
  */
-package leaderboard1;
+package main.java.my.test;
 import java.util.Scanner;
 
-/**
- *
- * @author hannahwallace
- */
+
 public class Leaderboard {
 	Player players[]= new Player[10];
 	
@@ -18,19 +16,19 @@ public class Leaderboard {
 		System.out.print("Enter name: ");
 		String id=input.nextLine();
 		Player player1=new Player();
-		player1.Name=id;
-		player1.Score=score;
+		player1.setName(id);
+		player1.changeScore(score);
 		return player1;
 	}
 	
 	public Player FindMin(Player[] array) {
 		Player min=new Player();
-		int minscore=array[0].Score;
+		int minscore=array[0].getScore();
 		for (int i=0; i<array.length; i++) {
-			if (array[i].Score<minscore){
-				minscore= array[i].Score;
+			if (array[i].getScore()<minscore){
+				minscore= array[i].getScore();
 				min=array[i];
-				min.Index=i;
+				min.setIndex(i);
 			}	
 		}
 		return min;
@@ -42,19 +40,19 @@ public class Leaderboard {
 		for (int i=0; i<players.length; i++) {
 			if (players[i]==null) {
 				players[i]=player1;
-				player1.Index=i;
+				player1.setIndex(i);
 			}
-			if (player1.Score<=min.Score){
-				players[min.Index]=player1;
+			if (player1.getScore()<=min.getScore()){
+				players[min.getIndex()]=player1;
 			}
 		}
 	}
 	
 	public void PrintLeaderboard() {
 		System.out.println("Leaderboard");
-		System.out.printf("%-4s %30s\n", "Name", "Score");
+		System.out.printf("%-4s %30s\n", "Name()", "Score()");
 		for (int i=0; i<players.length; i++) {
-			System.out.printf("%-4s %30i\n", players[i].Name, players[i].Score);
+			System.out.printf("%-4s %30i\n", players[i].getName(), players[i].getScore());
 		} 
 	}
 }

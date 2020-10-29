@@ -3,8 +3,9 @@
  * CS 321 Team 9 Fall 2020
  * Creates the Player class
  * and its actions.
+ * Apart of main.java.my.test package so it can use other classes in package
  */
-
+package main.java.my.test;
 import java.util.*;
 import java.io.*;
 
@@ -15,37 +16,38 @@ public class Player
 	 * by 1 increment given a direction from 0 to 3, corresponding
 	 * to east (0), north (1), west (2), and south (3)
 	 * function makes the assumptions that Map has a function
-	 * isWall(int vert, int hor), which returns whether the block at the
+	 * map1.isWall(int vert, int hor), which returns whether the block at the
 	 * location is a wall or in some other way restricted
 	 */
 	public void Move(int dir)
 	{
+            Map map1 = new Map();
 		switch(dir)
 		{
 			//case east
 			case 0:
-				if(!isWall(location[0], (location[1] + 1)))
+				if(!map1.isWall(location[0], (location[1] + 1)))
 				{
 					location[1] += 1;
 				}
 				break;
 			//case north
 			case 1:
-				if(!isWall((location[0] - 1), location[1]))
+				if(!map1.isWall((location[0] - 1), location[1]))
 				{
 					location[0] += 1;
 				}
 				break;
 			//case west
 			case 2:
-				if(!isWall(location[0], (location[1] + 1)))
+				if(!map1.isWall(location[0], (location[1] + 1)))
 				{
 					location[1] += 1;
 				}
 				break;
 			//case south
 			case 3:
-				if(!isWall((location[0] - 1), location[1]))
+				if(!map1.isWall((location[0] - 1), location[1]))
 				{
 					location[0] -= 1;
 				}
@@ -98,19 +100,39 @@ public class Player
 		return Score;
 	}
 	
-	public void changeScore()
+	public void changeScore(int newScore)
 	{
-		
+		Score = newScore;
 	}
 		
-		/**
+	/**
 	 * Player's function getName returns the player's name
 	 */
-		public String getName()
-		{
-			return Name;
-		}
-	
+	public String getName()
+	{
+		return Name;
+	}
+         /**
+	 * Player's function setName modifies the player's name
+	 */      
+        public void setName(String newName)
+	{
+		Name = newName;
+	}
+        /**
+	 * Player's function getIndex returns the player's index
+	 */ 
+	public int getIndex()
+	{
+		return Index;
+	}
+        /**
+	 * Player's function setIndex modifies the player's index
+	 */      
+        public void setIndex(int newIndex)
+	{
+		Index = newIndex;
+	}
 	/**
 	 * Player's field location stores the location of
 	 * the player in the format {vertical, horizontal} 

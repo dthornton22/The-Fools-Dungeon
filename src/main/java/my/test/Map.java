@@ -6,12 +6,13 @@
  */
 package main.java.my.test;
 
-public class Map {
-	
-	public static void main (String[] args){
+public class Map
+{
+
+	public static void main(String[] args)
+	{
 		/**
-		 * Creates Frame and Panel instances to construct
-		 * application on run
+		 * Creates Frame and Panel instances to construct application on run
 		 */
 		Frame dungeonWindow = new Frame();
 		ContentPanel dungeonPanel = new ContentPanel();
@@ -19,35 +20,44 @@ public class Map {
 		dungeonWindow.pack();
 		dungeonWindow.setVisible(true);
 	}
-	
+
 	/**
 	 * Constructs the map of the game with its grid
 	 */
-	public Map(){
+	public Map()
+	{
 		/**
 		 * Initializes map grid with arbitrary constant square boundaries
 		 */
 		mapMatrix = new int[MAPBOUNDS][MAPBOUNDS];
 	}
-	
+
 	/**
 	 * Map size to keep player within grid boundaries
+	 *
+	 * @return
 	 */
-	public int getSize(){
-		return(MAPBOUNDS);
+	public int getSize()
+	{
+		return (MAPBOUNDS);
 	}
-	
+
 	/**
 	 * Create obstacles at specific locations for map according to grid
+	 *
+	 * @param x
+	 * @param y
+	 * @return
 	 */
-	public boolean isWall(int x, int y){
+	public boolean isWall(int x, int y)
+	{
 		return false;
 	}
 	/**
 	 * Map Grid for playable area
 	 */
 	private final int[][] mapMatrix;
-	
+
 	/**
 	 * Map grid constraint constant for map size
 	 */

@@ -12,12 +12,14 @@ import javax.swing.JFrame;
 /**
  * Extends JFrame to create application window
  */
-public class Frame extends JFrame {
+public class Frame extends JFrame
+{
 
 	/**
-	* Constructs the application frame
-	*/
-	public Frame() {
+	 * Constructs the application frame
+	 */
+	public Frame()
+	{
 		/**
 		 * adds title and closing functionality to window
 		 */

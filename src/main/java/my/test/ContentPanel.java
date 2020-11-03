@@ -17,9 +17,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import javax.imageio.ImageIO;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 /**
  * Extends JPanel to represent panel for GUI items Implements ActionListener to
@@ -120,11 +124,11 @@ public class ContentPanel extends JPanel implements ActionListener
 	{
 		super.paintComponent(drawer);
 		drawer.drawImage(backgroundImage, 300, 0, 600, 600, this);
-		drawer.drawImage(player, 800, 520, 75, 75, this);
+		drawer.drawImage(player, 800, 530, 75, 75, this);
 		drawer.drawImage(enemy1, 400, 170, 75, 75, this);
 		drawer.drawImage(enemy2, 830, 195, 75, 75, this);
 		drawer.drawImage(armor, 550, 520, 60, 60, this);
-		drawer.drawImage(loot, 330, 30, 60, 60, this);
+		drawer.drawImage(loot, 330, 5, 60, 60, this);
 		drawer.drawImage(potion, 845, 105, 30, 30, this);
 		drawer.drawImage(sword, 730, 10, 60, 60, this);
 	}
@@ -144,7 +148,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			nameSave.write(input);
 		}
 	}
-
+        
 	//private final JButton enter;
 	/**
 	 * Panel button to nameEntry the game when clicked

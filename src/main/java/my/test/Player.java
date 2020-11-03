@@ -55,21 +55,6 @@ public class Player
 		}
 	}
 
-	public void Description()
-	{
-
-	}
-
-	public void Fight()
-	{
-
-	}
-
-	public void Use()
-	{
-
-	}
-
 	/**
 	 * Player's function getHealth returns how much health the player has
 	 *
@@ -89,11 +74,6 @@ public class Player
 	public void changeHealth(int amount)
 	{
 		health += amount;
-	}
-
-	public void Appearance()
-	{
-
 	}
 
 	/**

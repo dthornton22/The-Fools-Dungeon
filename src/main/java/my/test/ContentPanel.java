@@ -50,7 +50,14 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		try
 		{
-			backgroundImage = ImageIO.read(new File("assets/map silhouette.png"));
+			backgroundImage = ImageIO.read(new File("assets/map silhouette.png"));	
+			player = ImageIO.read(new File("assets/player silhouette.png"));	
+			enemy1 = ImageIO.read(new File("assets/enemy silhouette.png"));	
+			enemy2 = ImageIO.read(new File("assets/enemy silhouette.png"));
+			armor = ImageIO.read(new File("assets/armor item silhouette.png"));
+			loot = ImageIO.read(new File("assets/loot chest silhouette.png"));	
+			potion = ImageIO.read(new File("assets/potion silhouette.png"));	
+			sword = ImageIO.read(new File("assets/sword item silhouette.png"));
 		} catch (IOException e)
 		{
 			System.out.println("Incorect Image");
@@ -106,13 +113,20 @@ public class ContentPanel extends JPanel implements ActionListener
 
 	/**
 	 * References super method and overrides functionality Draws the image onto
-	 * screen with dimensions parameter drawer uses Graphics class to draw image
+	 * screen with dimensions parameter drawer uses Graphics class to draw images
 	 */
 	@Override
 	public void paintComponent(Graphics drawer)
 	{
 		super.paintComponent(drawer);
 		drawer.drawImage(backgroundImage, 300, 0, 600, 600, this);
+		drawer.drawImage(player, 800, 520, 75, 75, this);
+		drawer.drawImage(enemy1, 400, 170, 75, 75, this);
+		drawer.drawImage(enemy2, 830, 195, 75, 75, this);
+		drawer.drawImage(armor, 550, 520, 60, 60, this);
+		drawer.drawImage(loot, 330, 30, 60, 60, this);
+		drawer.drawImage(potion, 845, 105, 30, 30, this);
+		drawer.drawImage(sword, 730, 10, 60, 60, this);
 	}
 
 	/**
@@ -148,7 +162,42 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * Image variable to hold background Image
 	 */
 	private Image backgroundImage;
-
+        
+	/**
+	 * Image variable to hold player Image
+	 */
+	private Image player;
+        
+	/**
+	 * Image variable to hold enemy Image
+	 */
+	private Image enemy1;        
+	
+        /**
+	 * Image variable to hold enemy Image
+	 */
+	private Image enemy2;
+        
+	/**
+	 * Image variable to hold armor item Image
+	 */
+	private Image armor;
+        
+	/**
+	 * Image variable to hold loot item Image
+	 */
+	private Image loot;
+        
+	/**
+	 * Image variable to hold potion item Image
+	 */
+	private Image potion;
+        
+	/**
+	 * Image variable to hold sword item Image
+	 */
+	private Image sword;
+        
 	/**
 	 * Save variable to allow save of user names
 	 */

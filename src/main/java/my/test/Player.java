@@ -79,14 +79,19 @@ public class Player
 	/**
 	 * Player's function getScore returns the player's score
 	 *
-	 * @return
+	 * @return Score
 	 */
 	public int getScore()
 	{
 		return Score;
 	}
-
-	public void changeScore(int newScore)
+        
+        /**
+	 * Player's function setScore modifies the player's name
+         * 
+         * @param newScore
+	 */
+	public void setScore(int newScore)
 	{
 		Score = newScore;
 	}

@@ -20,7 +20,7 @@ public class Leaderboard
 		String id = input.nextLine();
 		Player player1 = new Player();
 		player1.setName(id);
-		player1.changeScore(score);
+		player1.setScore(score);
 		return player1;
 	}
 

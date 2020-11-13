@@ -204,7 +204,7 @@ public class ContentPanel extends JPanel implements ActionListener
                 if (e.getSource() == nameEntry)
 		{
 			user = new Player();
-                        user.changeScore(0);
+                        user.setScore(0);
                         String input = nameEntry.getText();
 			nameEntry.selectAll();
 			nameSave = new Save();

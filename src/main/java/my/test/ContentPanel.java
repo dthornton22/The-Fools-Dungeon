@@ -273,7 +273,7 @@ public class ContentPanel extends JPanel implements ActionListener
                                 swordImage = ImageIO.read(new File("assets/sword item silhouette.png"));
                         } catch (IOException io)
                         {
-                                System.out.println("Incorect Image");
+                                System.out.println("Incorrect Image");
                         }
                         repaint();
                         

@@ -36,7 +36,6 @@ import javax.swing.Timer;
  */
 public class ContentPanel extends JPanel implements ActionListener
 {
-
 	/**
 	 * Constructs the panel of the application where the GUI items will be and
 	 * the user will interact with
@@ -67,7 +66,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			backgroundImage = ImageIO.read(new File("assets/map silhouette.png"));
 		} catch (IOException e)
 		{
-			System.out.println("Incorect Image");
+			System.out.println("Incorrect Image");
 		}
 
 		/**
@@ -283,9 +282,9 @@ public class ContentPanel extends JPanel implements ActionListener
                 
                 /**
                  * Leaderboard Button ActionEvent on click
-                 * Shows leaderboard by reading scores.txt and outputting
+                 * Shows Leaderboard by reading scores.txt and outputting
                  * with label4
-                 * hides leaderboard button
+                 * hides Leaderboard button
                  */
                 if (e.getSource() == leaderboard)
                 {
@@ -389,8 +388,10 @@ public class ContentPanel extends JPanel implements ActionListener
                     }
                 }
 	}
-        /*KeyBinding method for Player movement on keypress
-        private void keyBinding()
+        /*
+         * KeyBinding method for Player movement on keypress
+         */
+        public void keyBinding()
         {
             int condition = JComponent.WHEN_IN_FOCUSED_WINDOW;
             InputMap inMap = getInputMap(condition);
@@ -427,9 +428,6 @@ public class ContentPanel extends JPanel implements ActionListener
             });
             
             component.getInputMap().put(KeyStroke.getKeyStroke('a'),"west");
-
-            
-            
             component.getActionMap().put("west", new AbstractAction(){
                 @Override
                 public void actionPerformed(ActionEvent e)
@@ -438,7 +436,7 @@ public class ContentPanel extends JPanel implements ActionListener
                     repaint();
                 }
             });
-        }*/
+        }
         
         /**
 	 * Panel button to play the game when clicked
@@ -565,9 +563,9 @@ public class ContentPanel extends JPanel implements ActionListener
 	private Save nameSave;
         
         /**
-         * private JComponent component;
          * JComponent for KeyBinding method
          */
+        private JComponent component;
         
         /**
          * Timer variable to allow movement of Enemy on time interval

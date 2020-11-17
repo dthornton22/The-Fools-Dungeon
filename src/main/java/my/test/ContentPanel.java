@@ -21,6 +21,7 @@ import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ActionMap;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -64,6 +65,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		try
 		{
 			backgroundImage = ImageIO.read(new File("assets/map silhouette.png"));
+                        northImage = ImageIO.read(new File("assets/north.png"));
+                        eastImage = ImageIO.read(new File("assets/east.png"));
+                        westImage = ImageIO.read(new File("assets/west.png"));
+                        southImage = ImageIO.read(new File("assets/south.png"));
+                        
 		} catch (IOException e)
 		{
 			System.out.println("Incorrect Image");
@@ -164,6 +170,54 @@ public class ContentPanel extends JPanel implements ActionListener
 		size = nameEntry.getPreferredSize();
 		nameEntry.setBounds(25, 285, size.width, size.height);
 		add(nameEntry);
+                
+                /**
+		 * North Button placement and attributes add to panel for display arbitrary
+		 * initial dimensions on personal computer left in for possible later
+		 * use
+		 */
+		north = new JButton(new ImageIcon(northImage));
+                size = north.getPreferredSize();
+                north.setBounds(95, 440, (size.width-20), size.height);
+                north.addActionListener(this);
+                add(north);
+                north.setVisible(false);
+                
+                /**
+		 * East Button placement and attributes add to panel for display arbitrary
+		 * initial dimensions on personal computer left in for possible later
+		 * use
+		 */
+		east = new JButton(new ImageIcon(eastImage));
+                size = east.getPreferredSize();
+                east.setBounds(185, 520, (size.width-20), size.height);
+                east.addActionListener(this);
+                add(east);
+                east.setVisible(false);
+                
+                /**
+		 * West Button placement and attributes add to panel for display arbitrary
+		 * initial dimensions on personal computer left in for possible later
+		 * use
+		 */
+		west = new JButton(new ImageIcon(westImage));
+                size = west.getPreferredSize();
+                west.setBounds(10, 520, (size.width-20), size.height);
+                west.addActionListener(this);
+                add(west);
+                west.setVisible(false);
+                
+                /**
+		 * South Button placement and attributes add to panel for display arbitrary
+		 * initial dimensions on personal computer left in for possible later
+		 * use
+		 */
+		south = new JButton(new ImageIcon(southImage));
+                size = south.getPreferredSize();
+                south.setBounds(95, 520, (size.width-20), size.height);
+                south.addActionListener(this);
+                add(south);
+                south.setVisible(false);
 	}
 
 	/**
@@ -239,6 +293,11 @@ public class ContentPanel extends JPanel implements ActionListener
                         user = new Player();
                         guard = new Enemy();
                         object = new Item();
+                        
+                        north.setVisible(true);
+                        east.setVisible(true);
+                        west.setVisible(true);
+                        south.setVisible(true);
                         
                         label4.setVisible(false);
                         label5.setVisible(false);
@@ -387,6 +446,54 @@ public class ContentPanel extends JPanel implements ActionListener
                         repaint();
                     }
                 }
+                
+                /**
+                 * North Button ActionEvent on click for Player movement
+                 */
+                if (e.getSource() == north)
+                {
+                    if (user.Move(1))
+                    {
+                        playerY -= 80;
+                        repaint();
+                    }
+                }
+                
+                /**
+                 * East Button ActionEvent on click for Player movement
+                 */
+                if (e.getSource() == east)
+                {
+                    if (user.Move(0))
+                    {
+                        playerX += 80;
+                        repaint();
+                    }
+                }
+                
+                /**
+                 * West Button ActionEvent on click for Player movement
+                 */
+                if (e.getSource() == west)
+                {
+                    if (user.Move(2))
+                    {
+                        playerX -= 80;
+                        repaint();
+                    }
+                }
+                
+                /**
+                 * South Button ActionEvent on click for Player movement
+                 */
+                if (e.getSource() == south)
+                {
+                    if (user.Move(3))
+                    {
+                        playerY += 80;
+                        repaint();
+                    }
+                }
 	}
         /*
          * KeyBinding method for Player movement on keypress
@@ -449,7 +556,7 @@ public class ContentPanel extends JPanel implements ActionListener
         private final JButton help;
         
         /**
-	 * Panel button to leaderboard the game when clicked
+	 * Panel button to Leaderboard the game when clicked
 	 */
         private final JButton leaderboard;
         
@@ -457,7 +564,27 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * Panel button to nameEntry the game when clicked
 	 */
 	private final JTextField nameEntry;
-
+        
+        /**
+	 * Panel button to move player north when clicked
+	 */
+        private final JButton north;
+        
+        /**
+	 * Panel button to move player east when clicked
+	 */
+        private final JButton east;
+        
+        /**
+	 * Panel button to move player west when clicked
+	 */
+        private final JButton west;
+        
+        /**
+	 * Panel button to move player south when clicked
+	 */
+        private final JButton south;
+        
 	/**
 	 * Panel labels to display
 	 */
@@ -506,6 +633,26 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * Image variable to hold sword item Image
 	 */
 	private Image swordImage;
+        
+        /**
+	 * Image variable to hold north button Image
+	 */
+	private Image northImage;
+        
+	/**
+	 * Image variable to hold east button Image
+	 */
+	private Image eastImage;
+        
+        /**
+	 * Image variable to hold west button Image
+	 */
+	private Image westImage;
+        
+        /**
+	 * Image variable to hold south button Image
+	 */
+	private Image southImage;
         
         /**
          * Square Tile Constants for X and Y locations in GUI grid

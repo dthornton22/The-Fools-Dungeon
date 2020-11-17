@@ -19,40 +19,61 @@ public class Player
 	 *
 	 * @param dir
 	 */
-	public void Move(int dir)
+	public boolean Move(int dir)
 	{
 		Map map1 = new Map();
 		switch (dir)
 		{
 			//case east
 			case 0:
-				if (!map1.isWall(location[0], (location[1] + 1)))
-				{
-					location[1] += 1;
-				}
-				break;
+                            if (location[1] == 7)
+                            {
+                                return false;
+                            }
+                            else if (!map1.isWall(location[0], (location[1] + 1)))
+                            {
+				location[1] += 1;
+                                return true;
+                            }
+                            break;
 			//case north
 			case 1:
-				if (!map1.isWall((location[0] - 1), location[1]))
+				if (location[0] == 0)
+                                {
+                                    return false;
+                                }
+                                else if (!map1.isWall((location[0] - 1), location[1]))
 				{
-					location[0] += 1;
+                                    location[0] -= 1;
+                                    return true;
 				}
 				break;
 			//case west
 			case 2:
-				if (!map1.isWall(location[0], (location[1] + 1)))
+				if (location[1] == 0)
+                                {
+                                    return false;
+                                }
+                                else if (!map1.isWall(location[0], (location[1] - 1)))
 				{
-					location[1] += 1;
+					location[1] -= 1;
+                                        return true;
 				}
 				break;
 			//case south
 			case 3:
-				if (!map1.isWall((location[0] - 1), location[1]))
-				{
-					location[0] -= 1;
-				}
+                                if (location[0] == 7)
+                                {
+                                    return false;
+                                }
+                                else if (!map1.isWall((location[0] + 1), location[1]))
+                                {
+                                    location[0] += 1;
+                                    return true;
+                                }
 				break;
 		}
+                return false;
 	}
 
 	/**

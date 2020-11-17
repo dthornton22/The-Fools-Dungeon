@@ -17,6 +17,8 @@ public class Map
 		Frame dungeonWindow = new Frame();
                 
                 Player user = new Player();
+                user.setScore(0);
+                user.setHealth(100);
                 Enemy guard = new Enemy();
                 Item object = new Item();
 		ContentPanel dungeonPanel = new ContentPanel(user, guard, object);

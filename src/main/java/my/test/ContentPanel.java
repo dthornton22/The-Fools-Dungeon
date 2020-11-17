@@ -214,7 +214,7 @@ public class ContentPanel extends JPanel implements ActionListener
                         label2.setVisible(false);
                         label3.setVisible(false);
                         
-                        label4.setText("Hello " + nameSave.getName(nameSave.namesSize()-1));
+                        label4.setText("Hello " + nameSave.getName(nameSave.namesSize()-1) + ".");
                         size = label4.getPreferredSize();
                         label4.setBounds(10, 270, size.width, size.height);
                         label4.setVisible(true);
@@ -245,12 +245,11 @@ public class ContentPanel extends JPanel implements ActionListener
                         
                         help.setVisible(false);
                         
-                        label1.setText("Health: ");
+                        label1.setText("Health: " + user.getHealth());
                         size = label1.getPreferredSize();
                         label1.setBounds(10, 270, size.width, size.height);
 
-
-                        label2.setText("Score: ");
+                        label2.setText("Score: " + user.getScore());
                         size = label2.getPreferredSize();
                         label2.setBounds(10, 290, size.width, size.height);
 
@@ -389,16 +388,71 @@ public class ContentPanel extends JPanel implements ActionListener
                 }
 	}
         /*
-         * KeyBinding method for Player movement on keypress
+         * keyBinding method for Player movement on keypress
          */
         public void keyBinding()
         {
-            int condition = JComponent.WHEN_IN_FOCUSED_WINDOW;
-            InputMap inMap = getInputMap(condition);
-            ActionMap actMap = getActionMap();
+            javax.swing.Action moveNorth = new AbstractAction() 
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    playerY -= 80;
+                    repaint();
+                }
+            };
             
-            component.getInputMap().put(KeyStroke.getKeyStroke('w'),"north");
-            component.getActionMap().put("north", new AbstractAction(){
+            KeyStroke northStroke = KeyStroke.getKeyStroke(KeyEvent.VK_W, 0);
+            component.getActionMap().put("north", moveNorth);
+            component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(northStroke, "north");
+
+            javax.swing.Action moveEast = new AbstractAction() 
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    playerX += 80;
+                    repaint();
+                }
+            };
+            
+            KeyStroke eastStroke = KeyStroke.getKeyStroke(KeyEvent.VK_D, 0);
+            component.getActionMap().put("east", moveEast);
+            component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(eastStroke, "east");
+
+            javax.swing.Action moveSouth = new AbstractAction() 
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    playerY += 80;
+                    repaint();
+                }
+            };
+            
+            KeyStroke southStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, 0);
+            component.getActionMap().put("south", moveSouth);
+            component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(southStroke, "south");
+
+            javax.swing.Action moveWest = new AbstractAction() 
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    playerX -= 80;
+                    repaint();
+                }
+            };
+            
+            KeyStroke westStroke = KeyStroke.getKeyStroke(KeyEvent.VK_A, 0);
+            component.getActionMap().put("west", moveWest);
+            component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(westStroke, "west");
+
+            /*InputMap inMap = component.getInputMap(WHEN_IN_FOCUSED_WINDOW);
+            ActionMap actMap = component.getActionMap();
+            
+            inMap.put(KeyStroke.getKeyStroke("W"),"north");
+            actMap.put("north", new AbstractAction(){
                     @Override
                     public void actionPerformed(ActionEvent e)
                     {
@@ -407,8 +461,8 @@ public class ContentPanel extends JPanel implements ActionListener
                     }            
                 });
             
-            component.getInputMap().put(KeyStroke.getKeyStroke('d'),"east");
-            component.getActionMap().put("east", new AbstractAction(){
+            inMap.put(KeyStroke.getKeyStroke("D"),"east");
+            actMap.put("east", new AbstractAction(){
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
@@ -417,8 +471,8 @@ public class ContentPanel extends JPanel implements ActionListener
                 }
             });
             
-            component.getInputMap().put(KeyStroke.getKeyStroke('s'),"south");
-            component.getActionMap().put("south", new AbstractAction(){
+            inMap.put(KeyStroke.getKeyStroke("S"),"south");
+            actMap.put("south", new AbstractAction(){
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
@@ -427,15 +481,15 @@ public class ContentPanel extends JPanel implements ActionListener
                 }
             });
             
-            component.getInputMap().put(KeyStroke.getKeyStroke('a'),"west");
-            component.getActionMap().put("west", new AbstractAction(){
+            inMap.put(KeyStroke.getKeyStroke("A"),"west");
+            actMap.put("west", new AbstractAction(){
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
                     playerX -= 80;
                     repaint();
                 }
-            });
+            });*/
         }
         
         /**

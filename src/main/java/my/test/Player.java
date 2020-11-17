@@ -9,7 +9,6 @@ package main.java.my.test;
 
 public class Player
 {
-
 	/**
 	 * Player's function Move changes the location of the player by 1 increment
 	 * given a direction from 0 to 3, corresponding to east (0), north (1), west
@@ -83,18 +82,18 @@ public class Player
 	 */
 	public int getHealth()
 	{
-		return health;
+            return health;
 	}
 
 	/**
-	 * Player's function changeHealth adds or subtracts health from the player
-	 * based on the parameter amount
-	 *
+	 * Player's function changeHealth changes the 
+	 * Player's health to the parameter amount
+         *
 	 * @param amount
 	 */
-	public void changeHealth(int amount)
+	public void setHealth(int amount)
 	{
-		health += amount;
+            health = amount;
 	}
 
 	/**
@@ -104,7 +103,7 @@ public class Player
 	 */
 	public int getScore()
 	{
-		return Score;
+            return Score;
 	}
         
         /**
@@ -114,7 +113,7 @@ public class Player
 	 */
 	public void setScore(int newScore)
 	{
-		Score = newScore;
+            Score = newScore;
 	}
 
 	/**
@@ -124,7 +123,7 @@ public class Player
 	 */
 	public String getName()
 	{
-		return Name;
+            return Name;
 	}
 
 	/**
@@ -134,7 +133,7 @@ public class Player
 	 */
 	public void setName(String newName)
 	{
-		Name = newName;
+            Name = newName;
 	}
 
 	/**
@@ -144,7 +143,7 @@ public class Player
 	 */
 	public int getIndex()
 	{
-		return Index;
+            return Index;
 	}
 
 	/**
@@ -154,7 +153,7 @@ public class Player
 	 */
 	public void setIndex(int newIndex)
 	{
-		Index = newIndex;
+            Index = newIndex;
 	}
 	/**
 	 * Player's field location stores the location of the player in the format

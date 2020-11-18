@@ -114,11 +114,4 @@ public class Item
 			// There will be more here to create the item
 		}
 	}
-
-	public static void main(String[] args)
-	{
-		// TODO code application logic here
-
-	}
-
 }

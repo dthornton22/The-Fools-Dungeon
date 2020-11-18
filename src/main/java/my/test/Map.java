@@ -69,9 +69,9 @@ public class Map
 	/**
 	 * Map Grid for playable area with obstacles
 	 */
-	private final int[][] mapMatrix = {{0,0,1,0,0,0,0,1},
+	private final int[][] mapMatrix = {{0,0,1,0,1,0,0,1},
                                            {1,0,1,0,0,0,1,0},
-                                           {1,0,0,1,1,0,1,0},
+                                           {1,0,0,1,0,0,1,0},
                                            {1,0,0,0,0,1,1,0},
                                            {1,0,1,0,0,0,0,0},
                                            {1,0,0,1,1,0,0,1},

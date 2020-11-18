@@ -174,7 +174,15 @@ public class Player
 	 */
 	private String Name;
 	/**
-	 * Player's field index represents ??? what is this hannah
+	 * Player's field index represents the player's position on the leaderboard
 	 */
 	private int Index;
+        /**
+	 * Player's field gear represents the armor and the sword the player holds
+	 */
+        private Item gear[] = new Item[2];
+        /**
+	 * Player's field potions represents the potions (up to 10) the player has
+	 */
+        private Item potions[] = new Item[10];
 }

@@ -20,4 +20,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: "**.jar"
+          path: team-9-project-cs-321-01/team-9-project-cs-321-01/dist/lib/*.jar

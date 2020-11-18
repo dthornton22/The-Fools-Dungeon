@@ -58,7 +58,11 @@ public class Player extends Entity
 	 */
         private Item sword = new Item();
         /**
-	 * Player's field potions represents the potions (up to 10) the player has
+	 * Player's field potions represents the potions (up to MAX_INT) the player has
 	 */
-        private Item potions[] = new Item[10];
+        private Item potions[] = new Item[MAX_INT];
+        /**
+	 * Player's constant field MAX_INV represents how many potions the player can hold
+	 */
+        private static final int MAX_INV = 10;
 }

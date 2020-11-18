@@ -6,7 +6,13 @@
  */
 package main.java.my.test;
 
-public class Enemy
+public class Enemy extends Entity
 {
+    private int UUID, level_number;
+    private boolean activated;
 
+    public int getUUID()
+    {
+	return UUID;
+    }
 }

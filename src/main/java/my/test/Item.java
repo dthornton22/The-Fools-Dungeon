@@ -22,7 +22,6 @@ public class Item
 	 * weapon is better.
 	 *
 	 * @param int current weapons weapon strength value
-	 * @return none
 	 */
 	private void setWeaponStrength(int currentStrength)
 	{
@@ -34,7 +33,6 @@ public class Item
 	/**
 	 * This function returns the current weapons strength.
 	 *
-	 * @param none
 	 * @return weaponStrengh the current weapons strength
 	 */
 	public int getWeaponStrength()
@@ -53,7 +51,6 @@ public class Item
 	 * This function uses a rng to determine what type of item drops in a given
 	 * call.
 	 *
-	 * @param none
 	 * @return int 0 = weapon, 1 = armor, 2 = other
 	 */
 	private int determineItemType()
@@ -67,8 +64,6 @@ public class Item
 	 * This function will create a sword when called. The sword will be created
 	 * with the setWeaponStrength function.
 	 *
-	 * @param none
-	 * @return none
 	 */
 	public void createSword()
 	{
@@ -79,8 +74,6 @@ public class Item
 	 * This function will create a health potion when called. The potion will be
 	 * created with the setHealthPotion function.
 	 *
-	 * @param none
-	 * @return none
 	 */
 	public void createHealthPot()
 	{
@@ -93,8 +86,6 @@ public class Item
 	 * return, I feel like structs would be good here but luckily Java sucks and
 	 * doesn't have structs so here we are.
 	 *
-	 * @param none
-	 * @return none
 	 */
 	public void createItem()
 	{

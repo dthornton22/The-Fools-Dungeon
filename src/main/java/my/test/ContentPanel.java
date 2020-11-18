@@ -451,7 +451,7 @@ public class ContentPanel extends JPanel implements ActionListener
                  */
                 if (e.getSource() == north)
                 {
-                    if (user.Move(1))
+                    if (user.move(1))
                     {
                         playerY -= 80;
                         repaint();
@@ -463,7 +463,7 @@ public class ContentPanel extends JPanel implements ActionListener
                  */
                 if (e.getSource() == east)
                 {
-                    if (user.Move(0))
+                    if (user.move(0))
                     {
                         playerX += 80;
                         repaint();
@@ -475,7 +475,7 @@ public class ContentPanel extends JPanel implements ActionListener
                  */
                 if (e.getSource() == west)
                 {
-                    if (user.Move(2))
+                    if (user.move(2))
                     {
                         playerX -= 80;
                         repaint();
@@ -487,7 +487,7 @@ public class ContentPanel extends JPanel implements ActionListener
                  */
                 if (e.getSource() == south)
                 {
-                    if (user.Move(3))
+                    if (user.move(3))
                     {
                         playerY += 80;
                         repaint();

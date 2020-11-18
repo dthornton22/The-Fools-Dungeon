@@ -12,7 +12,7 @@ public class Player extends Entity
 	/**
 	 * Player's function getName returns the player's name
 	 *
-	 * @return
+	 * @return name
 	 */
 	public String getName()
 	{
@@ -30,20 +30,20 @@ public class Player extends Entity
 	/**
 	 * Player's function getIndex returns the player's index
 	 *
-	 * @return
+	 * @return index
 	 */
 	public int getIndex()
 	{
             return index;
 	}
 	/**
-	 * Player's function setIndex modifies the player's index
+	 * Player's function setIndex modifies the player's position on the leaderboard
 	 *
 	 * @param newIndex
 	 */
 	public void setIndex(int newIndex)
 	{
-            Index = newIndex;
+            index = newIndex;
 	}
 	/**
 	 * Player's field Name represents the player's name
@@ -54,9 +54,9 @@ public class Player extends Entity
 	 */
 	private int index;
         /**
-	 * Player's field gear represents the armor and the sword the player holds
+	 * Player's field sword represents the sword the player holds
 	 */
-        private Item gear[] = new Item[2];
+        private Item sword = new Item();
         /**
 	 * Player's field potions represents the potions (up to 10) the player has
 	 */

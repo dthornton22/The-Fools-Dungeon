@@ -8,27 +8,35 @@ package main.java.my.test;
 
 public abstract class Entity
 {
-	private int health, score;
-	private int location[] = new int[2];
-	private String name;
-
+        /**
+	 * Entity's function getHealth gets the entity's health
+         *
+         * @return health
+	 */
 	public int getHealth()
 	{
 		return health;
 	}
-
+        /**
+	 * Entity's function getScore gets the entity's score
+         *
+         * @return score
+	 */
 	public int getScore()
 	{
 		return score;
 	}
-
+        /**
+	 * Entity's function getLocation gets the entity's location
+         *
+         * @return location
+	 */
 	public int[] getLocation()
 	{
 		return location;
 	}
-
         /**
-	 * Entity's function Move changes the location of the entity by 1 increment
+	 * Entity's function move changes the location of the entity by 1 increment
 	 * given a direction from 0 to 3, corresponding to east (0), north (1), west
 	 * (2), and south (3) function makes the assumptions that Map has a function
 	 * map1.isWall(int vert, int hor), which returns whether the block at the
@@ -92,14 +100,30 @@ public abstract class Entity
 		}
                 return false;
 	}
-
+        /**
+	 * Entity's setScore sets the entity's score
+         *
+         * @param newScore
+	 */
 	public void setScore(int newScore)
 	{
 		score = newScore;
 	}
-
+        /**
+	 * Entity's setHealth sets the entity's health
+         *
+         * @param newHealth
+	 */
 	public void setHealth(int newHealth)
 	{
 		health = newHealth;
 	}
+        /**
+	 * Entity's fields health and score
+	 */
+	private int health, score;
+        /**
+	 * Entity's field location (first entry is vertical, second is horizontal)
+	 */
+	private int location[] = new int[2];
 }

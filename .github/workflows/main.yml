@@ -21,3 +21,5 @@ jobs:
         with:
           name: Package
           path: D:\a\team-9-project-cs-321-01\team-9-project-cs-321-01\dist\lib\*.jar
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2

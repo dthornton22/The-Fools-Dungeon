@@ -6,7 +6,7 @@
  * helps them in some way such as a health pack. 
  * 
  */
-package item;
+package main.java.my.test;
 import java.util.Random;
 
 

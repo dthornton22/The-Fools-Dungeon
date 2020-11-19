@@ -64,11 +64,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		try
 		{
-			backgroundImage = ImageIO.read(new File("assets/map silhouette.png"));
-                        northImage = ImageIO.read(new File("assets/north.png"));
-                        eastImage = ImageIO.read(new File("assets/east.png"));
-                        westImage = ImageIO.read(new File("assets/west.png"));
-                        southImage = ImageIO.read(new File("assets/south.png"));
+			backgroundImage = ImageIO.read(new File("src/main/resources/assets/map silhouette.png"));
+                        northImage = ImageIO.read(new File("src/main/resources/assets/north.png"));
+                        eastImage = ImageIO.read(new File("src/main/resources/assets/east.png"));
+                        westImage = ImageIO.read(new File("src/main/resources/assets/west.png"));
+                        southImage = ImageIO.read(new File("src/main/resources/assets/south.png"));
                         
 		} catch (IOException e)
 		{
@@ -322,13 +322,13 @@ public class ContentPanel extends JPanel implements ActionListener
                          */
                         try
                         {	
-                                playerImage = ImageIO.read(new File("assets/player silhouette.png"));	
-                                enemy1Image = ImageIO.read(new File("assets/enemy silhouette.png"));	
-                                enemy2Image = ImageIO.read(new File("assets/enemy silhouette.png"));
-                                armorImage = ImageIO.read(new File("assets/armor item silhouette.png"));
-                                lootImage = ImageIO.read(new File("assets/loot chest silhouette.png"));	
-                                potionImage = ImageIO.read(new File("assets/potion silhouette.png"));	
-                                swordImage = ImageIO.read(new File("assets/sword item silhouette.png"));
+                                playerImage = ImageIO.read(new File("src/main/resources/assets/player silhouette.png"));	
+                                enemy1Image = ImageIO.read(new File("src/main/resources/assets/enemy silhouette.png"));	
+                                enemy2Image = ImageIO.read(new File("src/main/resources/assets/enemy silhouette.png"));
+                                armorImage = ImageIO.read(new File("src/main/resources/assets/armor item silhouette.png"));
+                                lootImage = ImageIO.read(new File("src/main/resources/assets/loot chest silhouette.png"));	
+                                potionImage = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));	
+                                swordImage = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png"));
                         } catch (IOException io)
                         {
                                 System.out.println("Incorrect Image");

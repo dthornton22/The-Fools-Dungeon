@@ -165,7 +165,7 @@ public class Save
 	/**
 	 * File path for where the names should be stored
 	 */
-	private final File namesFile = new File("scores.txt");
+	private final File namesFile = new File("src/main/resources/scores.txt");
 
 	/**
 	 * ArrayList to store read names

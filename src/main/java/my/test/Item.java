@@ -6,11 +6,11 @@
  * helps them in some way such as a health pack. 
  * 
  */
-package items;
+package item;
 import java.util.Random;
 
 
-public class Items {
+public class Item {
 
     //Variable Declarations
     private int weaponStrength;
@@ -71,6 +71,7 @@ public class Items {
     public void createSword()
     {
         setWeaponStrength(weaponStrength);
+        // This will be code for GUI
     }
     
     /**

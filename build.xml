@@ -29,6 +29,7 @@
     <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}">
       <manifest>
         <attribute name="Main-Class" value="main.java.my.test.Map"/>
+        <attribute name="Class-Path" value=""/>
       </manifest>
     </jar>
   </target>

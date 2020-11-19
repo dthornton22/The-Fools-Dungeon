@@ -45,6 +45,20 @@ public class Player extends Entity
 	{
             index = newIndex;
 	}
+        /**
+	 * Player's function usePotion increases the player's health and
+	 * removes the potion from the array of potions
+         *
+	 * @param index
+	 */
+        public void usePotion(int index)
+        {
+            if(maxArray >= 1)
+            {
+                this.setHealth(this.getHealth() + potions[index].getHealthIncrease());
+                maxArray -= 1;
+            }
+        }
 	/**
 	 * Player's field Name represents the player's name
 	 */
@@ -65,4 +79,8 @@ public class Player extends Entity
 	 * Player's constant field MAX_INV represents how many potions the player can hold
 	 */
         private static final int MAX_INV = 10;
+        /**
+	 * Player's field maxArray represents how many potions the player currently has
+	 */
+        private int maxArray;
 }

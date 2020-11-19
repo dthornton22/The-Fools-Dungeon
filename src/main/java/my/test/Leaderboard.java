@@ -10,14 +10,7 @@ import java.util.Scanner;
 
 public class Leaderboard 
 {
-    /**
-     * Leaderboard's function createLeaderboard creates an array of length 10
-     * and of type Player to hold the top 10 highest scoring players
-    **/
-    public void createLeaderboard() 
-    {
         Player players[] = new Player[10];
-    }
         
 	/**
 	 * Leaderboard's function findMin takes an array of players and returns
@@ -43,7 +36,7 @@ public class Leaderboard
 	 * Leaderboard's function addPlayer asks for the user's name and sorts
          * their Player into the leaderboard based on their score
 	 */
-	public void addPlayer(Player player1, Player[] players) 
+	public void addPlayer(Player player1) 
         {
                 Scanner input = new Scanner(System.in);
                 System.out.print("Enter name: ");
@@ -84,11 +77,11 @@ public class Leaderboard
                 }
 	}
         
-        private void swapPlayers(Player x, Player y, Player [] array) 
+        private void swapPlayers(Player x, Player y) 
         {
                 Player temp = y;
                 x.setIndex(y.getIndex());
-                array[y.getIndex()] = x;
+                players[y.getIndex()] = x;
                 x = temp;
         }
 	
@@ -101,4 +94,14 @@ public class Leaderboard
 			System.out.printf("%-4s %30i\n", players[i].getName(), players[i].getScore());
 		} 
 	}
+        
+        public void loadLeaderboard()
+        {
+            
+        }
+        
+        public void saveLeaderboard()
+        {
+                
+        }
 }

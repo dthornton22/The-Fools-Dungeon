@@ -10,7 +10,6 @@ package main.java.my.test;
 
 import java.util.Random;
 
-
 public class Item {
 
     //Variable Declarations

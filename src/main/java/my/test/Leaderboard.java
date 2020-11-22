@@ -58,7 +58,7 @@ public class Leaderboard
                                 {       
                                         for (int j = i; j < (players.length-i); j++)
                                         {
-                                                swapPlayers(player1, players[j], players);
+                                                swapPlayers(player1, players[j]);
                                                 players[j].setIndex(j);
                                         }
                                         break;

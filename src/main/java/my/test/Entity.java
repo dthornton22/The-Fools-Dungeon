@@ -121,7 +121,8 @@ public abstract class Entity
         /**
 	 * Entity's fields health and score
 	 */
-	private int health, score;
+	private int health = 100;
+        private int score = 0;
         /**
 	 * Entity's field location (first entry is vertical, second is horizontal)
 	 */

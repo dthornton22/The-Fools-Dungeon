@@ -200,11 +200,8 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * initial dimensions on personal computer left in for possible later
 		 * use
 		 */
-		north = new JButton(new ImageIcon(northImage));
-                size = north.getPreferredSize();
-                north.setBounds(95, 440, (size.width-20), size.height);
-                north.addActionListener(this);
-                add(north);
+		//north = new JButton(new ImageIcon(northImage));
+                north =  new JButton();
                 north.setVisible(false);
                 
                 /**
@@ -212,11 +209,8 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * initial dimensions on personal computer left in for possible later
 		 * use
 		 */
-		east = new JButton(new ImageIcon(eastImage));
-                size = east.getPreferredSize();
-                east.setBounds(185, 520, (size.width-20), size.height);
-                east.addActionListener(this);
-                add(east);
+		//east = new JButton(new ImageIcon(eastImage));
+                east =  new JButton();
                 east.setVisible(false);
                 
                 /**
@@ -224,11 +218,8 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * initial dimensions on personal computer left in for possible later
 		 * use
 		 */
-		west = new JButton(new ImageIcon(westImage));
-                size = west.getPreferredSize();
-                west.setBounds(10, 520, (size.width-20), size.height);
-                west.addActionListener(this);
-                add(west);
+		//west = new JButton(new ImageIcon(westImage));
+                west =  new JButton();
                 west.setVisible(false);
                 
                 /**
@@ -236,11 +227,8 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * initial dimensions on personal computer left in for possible later
 		 * use
 		 */
-		south = new JButton(new ImageIcon(southImage));
-                size = south.getPreferredSize();
-                south.setBounds(95, 520, (size.width-20), size.height);
-                south.addActionListener(this);
-                add(south);
+		//south = new JButton(new ImageIcon(southImage));
+                south =  new JButton();
                 south.setVisible(false);
 	}
 
@@ -358,6 +346,31 @@ public class ContentPanel extends JPanel implements ActionListener
                         {
                                 System.out.println("Incorrect Image");
                         }
+                        
+                        north = new JButton(new ImageIcon(northImage));
+                        size = north.getPreferredSize();
+                        north.setBounds(95, 440, (size.width-20), size.height);
+                        north.addActionListener(this);
+                        add(north);
+                        
+                        east = new JButton(new ImageIcon(eastImage));
+                        size = east.getPreferredSize();
+                        east.setBounds(185, 520, (size.width-20), size.height);
+                        east.addActionListener(this);
+                        add(east);
+                        
+                        west = new JButton(new ImageIcon(westImage));
+                        size = west.getPreferredSize();
+                        west.setBounds(10, 520, (size.width-20), size.height);
+                        west.addActionListener(this);
+                        add(west);
+                        
+                        south = new JButton(new ImageIcon(southImage));
+                        size = south.getPreferredSize();
+                        south.setBounds(95, 520, (size.width-20), size.height);
+                        south.addActionListener(this);
+                        add(south);
+                        
                         repaint();
                         
                         moveTimer.start();
@@ -1048,13 +1061,13 @@ public class ContentPanel extends JPanel implements ActionListener
         /**
 	 * Panel labels to display
 	 */
-	private final JLabel label1;
-	private final JLabel label2;
-	private final JLabel label3;
-        private final JLabel label4;
-        private final JLabel label5;
-        private final JLabel label6;
-        private final JLabel label7;
+	private JLabel label1;
+	private JLabel label2;
+	private JLabel label3;
+        private JLabel label4;
+        private JLabel label5;
+        private JLabel label6;
+        private JLabel label7;
         
 	/**
 	 * Panel button to nameEntry the game when clicked

@@ -16,10 +16,11 @@ public abstract class Entity
 	 * Entity's function fight executes combat between the user and an enemy
          *
          * @param enemy, player
-         * @return boolean
+         * @return whoWon
 	 */
-        /*public boolean fight(Enemy enemy, Player player)
+        public boolean fight(Enemy enemy, Player player)
         {       
+            boolean whoWon;
             while(player.getHealth()!=0 && enemy.getHealth()!=0)
             {
                 switch playerChoice:
@@ -29,17 +30,21 @@ public abstract class Entity
                     case 1:
                         //heal
                         break;
+                
+                
             }
 
             if(enemy.getHealth() == 0)
             {
-                return true;
+                whoWon = true;
             }
             else
             {
-                return false;
+                whoWon = false;
             }
-        }*/
+
+            return whoWon;
+        }
         /**
 	 * Entity's function getHealth gets the entity's health
          *
@@ -149,6 +154,15 @@ public abstract class Entity
 	public void setHealth(int newHealth)
 	{
 		health = newHealth;
+	}
+        /**
+	 * Entity's setPlayerChoice sets fighting choice of the player
+         *
+         * @param newChoice
+	 */
+	public void setPlayerChoice(int newChoice)
+	{
+		playerChoice = newHealth;
 	}
         /**
 	 * Entity's fields health and score

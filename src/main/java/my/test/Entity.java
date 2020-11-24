@@ -14,23 +14,28 @@ public abstract class Entity
          * @param enemy, player
          * @return boolean
 	 */
-        public boolean fight(Enemy enemy, Player player)
+        /*public boolean fight(Enemy enemy, Player player)
         {       
             while(player.getHealth()!=0 && enemy.getHealth()!=0)
             {
-                //player rolls hit damage
-                //enemy rolls hit damage
+                switch playerChoice:
+                    case 0:
+                        //fight
+                        break;
+                    case 1:
+                        //heal
+                        break;
             }
 
             if(enemy.getHealth() == 0)
             {
-                return 1;
+                return true;
             }
             else
             {
-                return 0;
+                return false;
             }
-        }
+        }*/
         /**
 	 * Entity's function getHealth gets the entity's health
          *
@@ -150,4 +155,9 @@ public abstract class Entity
 	 * Entity's field location (first entry is vertical, second is horizontal)
 	 */
 	private int location[] = new int[2];
+        /**
+	 * Entity's field playerChoice represents whether the player chose
+         * to attack or to heal in a fight, with 0 being attack and 1 being heal
+	 */
+        private int playerChoice;
 }

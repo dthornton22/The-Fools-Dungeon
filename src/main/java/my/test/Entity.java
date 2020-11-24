@@ -9,6 +9,12 @@ package main.java.my.test;
 
 public abstract class Entity
 {
+        /**
+	 * Entity's function fight executes combat between the user and an enemy
+         *
+         * @param enemy, player
+         * @return boolean
+	 */
         public boolean fight(Enemy enemy, Player player)
         {       
             while(player.getHealth()!=0 && enemy.getHealth()!=0)
@@ -17,7 +23,7 @@ public abstract class Entity
                 //enemy rolls hit damage
             }
 
-            if(enemy.getHealth == 0)
+            if(enemy.getHealth() == 0)
             {
                 return 1;
             }

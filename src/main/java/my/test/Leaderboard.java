@@ -6,17 +6,126 @@
  */
 package main.java.my.test;
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 public class Leaderboard 
 {
-        Player players[] = new Player[10];
+        private Player playersArray[] = new Player[10];
+        private ArrayList players = new ArrayList();
         
-	/**
-	 * Leaderboard's function findMin takes an array of players and returns
+        
+        /**
+	 * Leaderboard's function addPlayerArray receives a new player and sorts
+         * them into the leaderboard based on their score
+	 */
+        public void addPlayer(Player player1)
+        {
+                int score=player1.getScore();
+		Player min = findMin();
+                if (score>min.getScore()) 
+                {
+                        for (int i = 0; i < size(players); i++) 
+                        {
+                                Player temp = players.get(i);
+                                if (score>temp.getScore())
+                                {       
+                                        for (int j = i; j < (size(players)-i); j++)
+                                        {
+                                                swapPlayers(player1, (players.get(j)), j);
+                                        }
+                                        break;
+                                }
+                        }
+		}
+                else 
+                {
+                        players.add(player1);
+                }
+	}
+        
+        /**
+	 * Leaderboard's function addPlayerArray receives a new player and sorts
+         * them into the leaderboard based on their score (uses array instead of
+         * ArrayList)
+	 */
+	public void addPlayerArray(Player player1) 
+        {
+                int score=player1.getScore();
+		Player min = findMinArray(playersArray);
+                if (score>min.getScore()) 
+                {
+                        for (int i = 0; i < playersArray.length; i++) 
+                        {
+                                if (playersArray[i]==null) 
+                                {
+                                        playersArray[i] = player1;
+                                        player1.setIndex(i);
+                                        break;
+                                }
+                                if (score>=playersArray[i].getScore())
+                                {       
+                                        for (int j = i; j < (playersArray.length-i); j++)
+                                        {
+                                                swapPlayersArray(player1, playersArray[j]);
+                                                playersArray[j].setIndex(j);
+                                        }
+                                        break;
+                                }
+                        }
+		}
+                if (score == min.getScore())
+                {
+			playersArray[min.getIndex()] = player1;
+                        player1.setIndex(min.getIndex());
+                        min = player1;
+                }
+                else 
+                {
+                        System.out.println("Score was not high enough for leaderboard.");
+                }
+	}
+        
+        /**
+	 * Leaderboard's function enterPlayer asks for the user's name and sets their
+         * name to the user's input 
+	 */
+        public void enterPlayer(player player1)
+        {
+                Scanner input = new Scanner(System.in);
+                System.out.print("Enter name: ");
+                String id = input.nextLine();
+                player1.setName(id);
+        }
+        
+         /**
+	 * Leaderboard's function swapPlayersArray swaps the places of
+         * two players in the playersArray 
+	 */
+        private void swapPlayersArray(Player x, Player y) 
+        {
+                Player temp = y;
+                x.setIndex(y.getIndex());
+                playersArray[y.getIndex()] = x;
+                x = temp;
+        }
+        /**
+	 * Leaderboard's function swapPlayers swaps the places of
+         * two players in the players ArrayList 
+	 */
+        private void swapPlayers(Player x, Player y, int index) 
+        {
+                Player temp = y;
+                x.setIndex(y.getIndex());
+                players.set(y.getIndex(),x);
+                x = temp;
+                y.setIndex(index);
+        }
+	
+        /**
+	 * Leaderboard's function findMinArray takes an array of players and returns
          * the player with the lowest score
 	 */
-	private Player findMin(Player[] array) 
+	private Player findMinArray(Player[] array) 
         {
 		Player min = new Player();
 		int minscore = array[0].getScore();
@@ -32,60 +141,29 @@ public class Leaderboard
 		return min;
 	}
 	
-	/**
-	 * Leaderboard's function addPlayer asks for the user's name and sorts
-         * their Player into the leaderboard based on their score
+         /**
+	 * Leaderboard's function findMin takes looks through the ArrayList of Players and
+         * returns the player with the lowest score
 	 */
-	public void addPlayer(Player player1) 
+        private Player findMin()
         {
-                Scanner input = new Scanner(System.in);
-                System.out.print("Enter name: ");
-                String id = input.nextLine();
-                player1.setName(id);
-                int score=player1.getScore();
-		Player min = findMin(players);
-                if (score>min.getScore()) 
+                Player min = players.get(0);
+		for (int i = 0; i < size(players); i++) 
                 {
-                        for (int i = 0; i < players.length; i++) 
+                        Player temp = players.get(i);
+			if (temp.getScore() < min.getScore())
                         {
-                                if (players[i]==null) 
-                                {
-                                        players[i] = player1;
-                                        player1.setIndex(i);
-                                        break;
-                                }
-                                if (score>=players[i].getScore())
-                                {       
-                                        for (int j = i; j < (players.length-i); j++)
-                                        {
-                                                swapPlayers(player1, players[j]);
-                                                players[j].setIndex(j);
-                                        }
-                                        break;
-                                }
-                        }
+				min = temp;
+			}	
 		}
-                if (score == min.getScore())
-                {
-			players[min.getIndex()] = player1;
-                        player1.setIndex(min.getIndex());
-                        min = player1;
-                }
-                else 
-                {
-                        System.out.println("Score was not high enough for leaderboard.");
-                }
-	}
-        
-        private void swapPlayers(Player x, Player y) 
-        {
-                Player temp = y;
-                x.setIndex(y.getIndex());
-                players[y.getIndex()] = x;
-                x = temp;
+		return min;
         }
-	
-	public void printLeaderboard() 
+        
+         /**
+	 * Leaderboard's function printLeaderboardArray prints the array of
+         * players on the leaderboard
+	 */
+	public void printLeaderboardArray() 
         {
 		System.out.println("Leaderboard");
 		System.out.printf("%-4s %30s\n", "Name", "Score");
@@ -94,7 +172,7 @@ public class Leaderboard
 			System.out.printf("%-4s %30i\n", players[i].getName(), players[i].getScore());
 		} 
 	}
-
+	
 	/**
 	 * @return the players
 	 */

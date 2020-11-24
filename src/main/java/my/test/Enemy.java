@@ -1,4 +1,5 @@
 /*
+ * @author Laura Estep
  * Enemy.java
  * CS 321 Team 9 Fall 2020
  * Creates the Enemy class

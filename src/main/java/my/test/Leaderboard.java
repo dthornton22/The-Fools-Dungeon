@@ -1,5 +1,6 @@
 /*
- * LeaderBoard.java
+ * @author Hannah Wallace
+ * Leaderboard.java
  * CS 321 Team 9 Fall 2020
  * Creates the LeaderBoard class for score calculation
  * Apart of main.java.my.test package so it can use other classes in package

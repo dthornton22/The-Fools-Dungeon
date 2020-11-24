@@ -31,7 +31,7 @@ public class Item {
 
     /**
      * This function returns the current weapons strength.
-     * @param none
+     * 
      * @return weaponStrengh the current weapons strength
      */
     public int getWeaponStrength()
@@ -41,7 +41,7 @@ public class Item {
     
     /**
      * This function returns the amount of health increased by a health pot.
-     * @param none
+     * 
      * @return HEALTH_INCREASE int, expected to be 10
      */
     public int getHealthIncrease()
@@ -52,7 +52,7 @@ public class Item {
     /**
      * This function uses a rng to determine what type of item drops in a
      * given call.
-     * @param none
+     * 
      * @return int 0 = weapon, 1 = armor, 2 = other
      */
     private int determineItemType()
@@ -65,7 +65,7 @@ public class Item {
     /**
      * This function will create a sword when called. The sword will be created
      * with the setWeaponStrength function. 
-     * @param none
+     * 
      * @return none
      */
     public void createSword()
@@ -77,7 +77,7 @@ public class Item {
     /**
      * This function will create a health potion in the GUI when called. The 
      * potion will be determined by HEALTH_INCREASE.
-     * @param none
+     * 
      * @return none
      */
     public void createHealthPot()
@@ -89,7 +89,7 @@ public class Item {
      * This function will create a item based on the results of determineItemType()
      * and roll the items stats. As of right now it has no return, I feel like structs
      * would be good here but luckily Java sucks and doesn't have structs so here we are.
-     * @param none
+     * 
      * @return none
      */
     public void createItem()

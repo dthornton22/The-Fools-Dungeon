@@ -168,9 +168,9 @@ public class Leaderboard
         {
 		System.out.println("Leaderboard");
 		System.out.printf("%-4s %30s\n", "Name", "Score");
-		for (int i = 0; i < players.length; i++) 
+		for (int i = 0; i < playersArray.length; i++) 
                 {
-			System.out.printf("%-4s %30i\n", players[i].getName(), players[i].getScore());
+			System.out.printf("%-4s %30i\n", playersArray[i].getName(), playersArray[i].getScore());
 		} 
 	}
 	
@@ -179,7 +179,7 @@ public class Leaderboard
 	 */
 	public Player[] getPlayers()
 	{
-		return players;
+		return playersArray;
 	}
 
 	/**

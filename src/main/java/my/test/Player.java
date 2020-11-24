@@ -1,4 +1,5 @@
 /*
+ * @author David Thornton
  * Player.java
  * CS 321 Team 9 Fall 2020
  * Creates the Player class

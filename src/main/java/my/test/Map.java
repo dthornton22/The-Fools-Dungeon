@@ -1,4 +1,5 @@
 /*
+ * @author Will Osborne
  * Map.java
  * CS 321 Team 9 Fall 2020
  * Creates the Map class

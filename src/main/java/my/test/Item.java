@@ -1,10 +1,9 @@
 /*
  * @author Brandon Jett
+ * Item.java
  * Latest Date Modified: Oct 27, 2020
- * 
  * This class creates item objects that modify the players various values or
- * helps them in some way such as a health pack. 
- * 
+ * helps them in some way such as a health pack.
  */
 package main.java.my.test;
 

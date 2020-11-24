@@ -1,5 +1,6 @@
 /*
- * LeaderBoard.java
+ * @author Hannah Wallace
+ * Leaderboard.java
  * CS 321 Team 9 Fall 2020
  * Creates the LeaderBoard class for score calculation
  * Apart of main.java.my.test package so it can use other classes in package
@@ -167,9 +168,9 @@ public class Leaderboard
         {
 		System.out.println("Leaderboard");
 		System.out.printf("%-4s %30s\n", "Name", "Score");
-		for (int i = 0; i < players.length; i++) 
+		for (int i = 0; i < playersArray.length; i++) 
                 {
-			System.out.printf("%-4s %30i\n", players[i].getName(), players[i].getScore());
+			System.out.printf("%-4s %30i\n", playersArray[i].getName(), playersArray[i].getScore());
 		} 
 	}
 	
@@ -178,7 +179,7 @@ public class Leaderboard
 	 */
 	public Player[] getPlayers()
 	{
-		return players;
+		return playersArray;
 	}
 
 	/**

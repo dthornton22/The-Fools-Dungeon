@@ -1,4 +1,5 @@
 /*
+ * @author Will Osborne
  * ContentPanel.java
  * CS 321 Team 9 Fall 2020
  * Creates the ContentPanel class for the Map Class to build GUI

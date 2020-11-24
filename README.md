@@ -1,4 +1,4 @@
-# UAH CS 321 FA 20
+# The Fool's Dungeon
 ![Java CI](https://github.com/dthornton22/team-9-project-cs-321-01/workflows/Java%20CI/badge.svg?branch=master)
 
 This Java project is built using [Ant](https://ant.apache.org).

@@ -20,7 +20,7 @@ public class Item {
      *  it takes an input of the current damage modifier on
      *  the current weapon to ensure that this weapon is better.
      *  @param int current weapons weapon strength value
-     *  @return none
+     *  
     */
     private void setWeaponStrength(int currentStrength)
     {
@@ -66,7 +66,7 @@ public class Item {
      * This function will create a sword when called. The sword will be created
      * with the setWeaponStrength function. 
      * 
-     * @return none
+     * 
      */
     public void createSword()
     {
@@ -78,7 +78,7 @@ public class Item {
      * This function will create a health potion in the GUI when called. The 
      * potion will be determined by HEALTH_INCREASE.
      * 
-     * @return none
+     * 
      */
     public void createHealthPot()
     {
@@ -90,7 +90,7 @@ public class Item {
      * and roll the items stats. As of right now it has no return, I feel like structs
      * would be good here but luckily Java sucks and doesn't have structs so here we are.
      * 
-     * @return none
+     * 
      */
     public void createItem()
     {

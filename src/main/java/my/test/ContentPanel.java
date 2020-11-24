@@ -73,11 +73,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		try
 		{
-			backgroundImage = ImageIO.read(new File("../../src/main/resources/assets/map silhouette.png"));
-                        northImage = ImageIO.read(new File("../../src/main/resources/assets/north.png"));
-                        eastImage = ImageIO.read(new File("../../src/main/resources/assets/east.png"));
-                        westImage = ImageIO.read(new File("../../src/main/resources/assets/west.png"));
-                        southImage = ImageIO.read(new File("../../src/main/resources/assets/south.png"));
+			backgroundImage = ImageIO.read(new File("../main/resources/assets/map silhouette.png"));
+                        northImage = ImageIO.read(new File("../main/resources/assets/north.png"));
+                        eastImage = ImageIO.read(new File("../main/resources/assets/east.png"));
+                        westImage = ImageIO.read(new File("../src/main/resources/assets/west.png"));
+                        southImage = ImageIO.read(new File("../main/resources/assets/south.png"));
                         
 		} catch (IOException e)
 		{

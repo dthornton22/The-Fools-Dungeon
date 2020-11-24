@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Leaderboard 
 {
         private Player playersArray[] = new Player[10];
-        private ArrayList players = new ArrayList();
+        private ArrayList<Player> players = new ArrayList();
         
         
         /**
@@ -25,12 +25,12 @@ public class Leaderboard
 		Player min = findMin();
                 if (score>min.getScore()) 
                 {
-                        for (int i = 0; i < size(players); i++) 
+                        for (int i = 0; i < players.size(); i++) 
                         {
                                 Player temp = players.get(i);
                                 if (score>temp.getScore())
                                 {       
-                                        for (int j = i; j < (size(players)-i); j++)
+                                        for (int j = i; j < (players.size()-i); j++)
                                         {
                                                 swapPlayers(player1, (players.get(j)), j);
                                         }
@@ -90,7 +90,7 @@ public class Leaderboard
 	 * Leaderboard's function enterPlayer asks for the user's name and sets their
          * name to the user's input 
 	 */
-        public void enterPlayer(player player1)
+        public void enterPlayer(Player player1)
         {
                 Scanner input = new Scanner(System.in);
                 System.out.print("Enter name: ");
@@ -149,7 +149,7 @@ public class Leaderboard
         private Player findMin()
         {
                 Player min = players.get(0);
-		for (int i = 0; i < size(players); i++) 
+		for (int i = 0; i < players.size(); i++) 
                 {
                         Player temp = players.get(i);
 			if (temp.getScore() < min.getScore())
@@ -185,7 +185,7 @@ public class Leaderboard
 	/**
 	 * @param players the players to set
 	 */
-	public void setPlayers(Player[] players)
+	public void setPlayers(ArrayList<Player> players)
 	{
 		this.players = players;
 	}

@@ -8,6 +8,23 @@ package main.java.my.test;
 
 public abstract class Entity
 {
+        public boolean fight(Enemy enemy, Player player)
+        {       
+            while(player.getHealth()!=0 && enemy.getHealth()!=0)
+            {
+                //player rolls hit damage
+                //enemy rolls hit damage
+            }
+
+            if(enemy.getHealth == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
         /**
 	 * Entity's function getHealth gets the entity's health
          *

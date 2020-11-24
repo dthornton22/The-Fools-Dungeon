@@ -7,9 +7,9 @@
  */
 package main.java.my.test;
 
-
 /**
- * Runner class, also contains implementation for how the player can interact with the map
+ * Runner class, also contains implementation for how the player can interact
+ * with the map
  */
 public class Map
 {
@@ -20,12 +20,12 @@ public class Map
 		 * Creates Frame and Panel instances to construct application on run
 		 */
 		Frame dungeonWindow = new Frame();
-                
-                Player user = new Player();
-                user.setScore(0);
-                user.setHealth(100);
-                Enemy guard = new Enemy();
-                Item object = new Item();
+
+		Player user = new Player();
+		user.setScore(0);
+		user.setHealth(100);
+		Enemy guard = new Enemy();
+		Item object = new Item();
 		ContentPanel dungeonPanel = new ContentPanel(user, guard, object);
 		dungeonWindow.add(dungeonPanel);
 		dungeonWindow.pack();
@@ -62,26 +62,44 @@ public class Map
 	 */
 	public boolean isWall(int x, int y)
 	{
-            if((mapMatrix[x][y]) == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+		if ((mapMatrix[x][y]) == 1)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 	/**
 	 * Map Grid for playable area with obstacles
 	 */
-	private final int[][] mapMatrix = {{0,0,1,0,1,0,0,1},
-                                           {1,0,1,0,0,0,1,0},
-                                           {1,0,0,1,0,0,1,0},
-                                           {1,0,0,0,0,1,1,0},
-                                           {1,0,1,0,0,0,0,0},
-                                           {1,0,0,1,1,0,0,1},
-                                           {1,0,0,0,1,1,0,1},
-                                           {0,0,1,0,0,1,0,0}};
+	private final int[][] mapMatrix =
+	{
+		{
+			0, 0, 1, 0, 1, 0, 0, 1
+		},
+		{
+			1, 0, 1, 0, 0, 0, 1, 0
+		},
+		{
+			1, 0, 0, 1, 0, 0, 1, 0
+		},
+		{
+			1, 0, 0, 0, 0, 1, 1, 0
+		},
+		{
+			1, 0, 1, 0, 0, 0, 0, 0
+		},
+		{
+			1, 0, 0, 1, 1, 0, 0, 1
+		},
+		{
+			1, 0, 0, 0, 1, 1, 0, 1
+		},
+		{
+			0, 0, 1, 0, 0, 1, 0, 0
+		}
+	};
 
 	/**
 	 * Map grid constraint constant for map size

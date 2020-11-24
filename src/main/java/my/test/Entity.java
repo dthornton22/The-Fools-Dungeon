@@ -155,7 +155,18 @@ public abstract class Entity
 	 */
 	public void setHealth(int newHealth)
 	{
-		health = newHealth;
+                if(newHealth > 100)
+                {
+                    health = 100;
+                }
+                else if (newHealth < 0)
+                {
+                    health = 0;
+                }
+                else
+                {
+                    health = newHealth;
+                }
 	}
 
 	/**

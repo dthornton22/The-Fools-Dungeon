@@ -8,6 +8,10 @@
  */
 package main.java.my.test;
 
+
+/**
+ * Extends Entity to create an instance of player (the end user)
+ */
 public class Player extends Entity
 {
 	/**

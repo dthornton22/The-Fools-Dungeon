@@ -20,6 +20,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
+/**
+ * Saves the player's score upon defeating the final boss
+ */
 public class Save
 {
 	/**

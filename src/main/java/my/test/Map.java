@@ -7,6 +7,10 @@
  */
 package main.java.my.test;
 
+
+/**
+ * Runner class, also contains implementation for how the player can interact with the map
+ */
 public class Map
 {
 

@@ -6,6 +6,10 @@
  */
 package main.java.my.test;
 
+
+/**
+ * Handles interacting with the map
+ */
 public class Directions
 {
 

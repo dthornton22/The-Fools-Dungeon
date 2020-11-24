@@ -7,6 +7,9 @@
  */
 package main.java.my.test;
 
+/**
+ * Parent class for player and enemy
+ */
 public abstract class Entity
 {
         /**

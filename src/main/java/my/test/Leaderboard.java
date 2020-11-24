@@ -9,6 +9,10 @@ package main.java.my.test;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
+/**
+ * Displays the leaderboard from the saved file
+ */
 public class Leaderboard 
 {
         private Player playersArray[] = new Player[10];

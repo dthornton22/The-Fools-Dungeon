@@ -9,6 +9,9 @@ package main.java.my.test;
 
 import java.util.Random;
 
+/**
+ * A class for interacting with items
+ */
 public class Item {
 
     //Variable Declarations

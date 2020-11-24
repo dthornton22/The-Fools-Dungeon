@@ -7,6 +7,9 @@
  */
 package main.java.my.test;
 
+/**
+ * Entends Entity to create an instance of an enemy
+ */
 public class Enemy extends Entity
 {
     private int UUID, level_number;

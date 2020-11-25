@@ -29,6 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.Timer;
+import java.util.Random;
 
 /**
  * Extends JPanel to represent panel for GUI items Implements ActionListener to
@@ -681,7 +682,20 @@ public class ContentPanel extends JPanel implements ActionListener
 			try
 			{
 
-				drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            /**
+                             * This will drop a random item with a 60% chance for health pots
+                             * and a 40% chance for swords
+                             */
+                            Random rand = new Random();
+                            int n = rand.nextInt(5);                   // Change this number as needed
+                            if (n > 2)
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
+                            }
+                            else
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            } 
 			} catch (IOException e)
 			{
 				System.out.println();
@@ -698,7 +712,20 @@ public class ContentPanel extends JPanel implements ActionListener
 			try
 			{
 
-				drop2Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            /**
+                             * This will drop a random item with a 60% chance for health pots
+                             * and a 40% chance for swords
+                             */
+                            Random rand = new Random();
+                            int n = rand.nextInt(5);                   // Change this number as needed
+                            if (n > 2)
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
+                            }
+                            else
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            } 
 			} catch (IOException e)
 			{
 				System.out.println();
@@ -715,7 +742,20 @@ public class ContentPanel extends JPanel implements ActionListener
 			try
 			{
 
-				drop3Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            /**
+                             * This will drop a random item with a 60% chance for health pots
+                             * and a 40% chance for swords
+                             */
+                            Random rand = new Random();
+                            int n = rand.nextInt(5);                   // Change this number as needed
+                            if (n > 2)
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
+                            }
+                            else
+                            {
+                                drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                            } 
 			} catch (IOException e)
 			{
 				System.out.println();

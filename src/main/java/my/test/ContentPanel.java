@@ -276,6 +276,12 @@ public class ContentPanel extends JPanel implements ActionListener
 			user = new Player();
 			user.setScore(0);
 			String input = nameEntry.getText();
+                        
+                        //input validation of user name, confirming a name is entered
+                        if (!input.isEmpty())
+                        {
+                            input = "---";
+                        }
 			nameEntry.selectAll();
 
 			nameSave.lineCheck();

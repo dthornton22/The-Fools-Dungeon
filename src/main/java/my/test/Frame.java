@@ -23,7 +23,7 @@ public class Frame extends JFrame
 		/**
 		 * adds title and closing functionality to window
 		 */
-		super("Dungeon Crawler");
+		super("The Fool's Dungeon");
 		FlowLayout flowLayout = new FlowLayout(FlowLayout.CENTER);
 		setLayout(flowLayout);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

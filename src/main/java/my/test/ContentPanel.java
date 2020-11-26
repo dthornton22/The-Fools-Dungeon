@@ -2,7 +2,7 @@
  * @author Will Osborne
  * ContentPanel.java
  * CS 321 Team 9 Fall 2020
- * Creates the ContentPanel class for the Map class to build GUI
+ * Creates the ContentPanel class for the Map Class to build GUI
  */
 package main.java.my.test;
 
@@ -23,6 +23,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 import javax.swing.KeyStroke;
 import javax.swing.Timer;
 import java.util.Random;
@@ -82,7 +83,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * Label1 placement and attributes add to panel for display arbitrary
 		 * initial dimensions on personal computer
 		 */
-		label1 = new JLabel("Dungeon Crawler");
+		label1 = new JLabel("The Fool's Dungeon");
 		size = label1.getPreferredSize();
 		label1.setBounds(80, 240, size.width, size.height);
 		add(label1);
@@ -143,6 +144,14 @@ public class ContentPanel extends JPanel implements ActionListener
 		add(label7);
 		label7.setVisible(false);
 
+                /**
+		 * Label8 placement and attributes add to panel for display arbitrary
+		 * initial dimensions on personal computer
+		 */
+		label8 = new JLabel("");
+		add(label8);
+		label8.setVisible(false);
+                
 		/**
 		 * Play Button placement and attributes add to panel for display
 		 * arbitrary initial dimensions on personal computer left in for
@@ -154,15 +163,27 @@ public class ContentPanel extends JPanel implements ActionListener
 		play.addActionListener(this);
 		add(play);
 		play.setVisible(false);
+                
+                /**
+		 * Exit Button placement and attributes add to panel for display
+		 * arbitrary initial dimensions on personal computer left in for
+		 * possible later use
+		 */
+		exit = new JButton("Exit");
+		size = exit.getPreferredSize();
+		exit.setBounds(100, 435, size.width, (size.height + 10));
+		exit.addActionListener(this);
+		add(exit);
+		exit.setVisible(false);
 
 		/**
 		 * Help Button placement and attributes add to panel for display
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		help = new JButton("Help");
+		help = new JToggleButton("Help");
 		size = help.getPreferredSize();
-		help.setBounds(10, 15, size.width, (size.height + 10));
+		help.setBounds(10, 15, (size.width + 10), (size.height + 10));
 		help.addActionListener(this);
 		add(help);
 		help.setVisible(false);
@@ -172,7 +193,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		leaderboard = new JButton("Leaderboard");
+		leaderboard = new JToggleButton("Leaderboard");
 		size = leaderboard.getPreferredSize();
 		leaderboard.setBounds(10, 15, size.width, (size.height + 10));
 		leaderboard.addActionListener(this);
@@ -195,8 +216,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		// north = new JButton(new ImageIcon(northImage));
-		north = new JButton();
+                north = new JButton(new ImageIcon(northImage));
+		size = north.getPreferredSize();
+		north.setBounds(95, 440, (size.width - 20), size.height);
+		north.addActionListener(this);
+                add(north);
 		north.setVisible(false);
 
 		/**
@@ -204,8 +228,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		// east = new JButton(new ImageIcon(eastImage));
-		east = new JButton();
+                east = new JButton(new ImageIcon(eastImage));
+		size = east.getPreferredSize();
+		east.setBounds(185, 520, (size.width - 20), size.height);
+		east.addActionListener(this);
+		add(east);
 		east.setVisible(false);
 
 		/**
@@ -213,8 +240,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		// west = new JButton(new ImageIcon(westImage));
-		west = new JButton();
+                west = new JButton(new ImageIcon(westImage));
+		size = west.getPreferredSize();
+		west.setBounds(10, 520, (size.width - 20), size.height);
+		west.addActionListener(this);
+		add(west);
 		west.setVisible(false);
 
 		/**
@@ -222,8 +252,11 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		// south = new JButton(new ImageIcon(southImage));
-		south = new JButton();
+                south = new JButton(new ImageIcon(southImage));
+		size = south.getPreferredSize();
+		south.setBounds(95, 520, (size.width - 20), size.height);
+		south.addActionListener(this);
+		add(south);
 		south.setVisible(false);
 	}
 
@@ -239,9 +272,9 @@ public class ContentPanel extends JPanel implements ActionListener
 
 		drawer.drawImage(backgroundImage, SIDEPANEL, 0, SQUAREDIM, SQUAREDIM, this);
 		drawer.drawImage(armorImage, armorX, armorY, ITEMDIM, ITEMDIM, this);
-		drawer.drawImage(drop1Image, drop1X, drop1Y, POTIONDIM, POTIONDIM, this);
-		drawer.drawImage(drop2Image, drop2X, drop2Y, POTIONDIM, POTIONDIM, this);
-		drawer.drawImage(drop3Image, drop3X, drop3Y, POTIONDIM, POTIONDIM, this);
+		drawer.drawImage(drop1Image, drop1X, drop1Y, dropDim, dropDim, this);
+		drawer.drawImage(drop2Image, drop2X, drop2Y, dropDim, dropDim, this);
+		drawer.drawImage(drop3Image, drop3X, drop3Y, dropDim, dropDim, this);
 		drawer.drawImage(enemy1Image, enemy1X, enemy1Y, PERSONDIM, PERSONDIM, this);
 		drawer.drawImage(enemy2Image, enemy2X, enemy2Y, PERSONDIM, PERSONDIM, this);
 		drawer.drawImage(enemy3Image, enemy3X, enemy3Y, PERSONDIM, PERSONDIM, this);
@@ -250,7 +283,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		drawer.drawImage(potionImage, potionX, potionY, POTIONDIM, POTIONDIM, this);
 		drawer.drawImage(swordImage, swordX, swordY, ITEMDIM, ITEMDIM, this);
 	}
-
+        
 	/**
 	 * Method for actions to be performed based on ActionEvent overridden from
 	 * ActionListener interface parameter e is input action
@@ -267,20 +300,12 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * label5 with direction Shows play and help buttons hides leaderboard
 		 * button, extra labels and nameEntry text field
 		 */
-		if (action.getSource() == nameEntry)
+		if (action.getSource() == nameEntry && (!nameEntry.getText().isEmpty()))
 		{
-			user = new Player();
 			user.setScore(0);
 			String input = nameEntry.getText();
-			
-			// input validation of user name, confirming a name is entered
-			if (!input.isEmpty())
-			{
-				// do not advance the game until the user inputs a valid name
-			}
-			nameEntry.selectAll();
-
-			nameSave.lineCheck();
+                        
+                        nameSave.lineCheck();
 			nameSave.write(input, user);
 
 			label1.setVisible(false);
@@ -292,7 +317,9 @@ public class ContentPanel extends JPanel implements ActionListener
 			label4.setBounds(10, 270, size.width, size.height);
 			label4.setVisible(true);
 
-			label5.setVisible(true);
+			size = label5.getPreferredSize();
+                        
+                        label5.setVisible(true);
 
 			nameEntry.setVisible(false);
 			leaderboard.setVisible(false);
@@ -307,6 +334,17 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		if (action.getSource() == play)
 		{
+                        passedArmor = false;
+                        passedDrop1 = false;
+                        passedDrop2 = false;
+                        passedDrop3 = false;
+                        passedEnemy1 = false;
+                        passedEnemy2 = false;
+                        passedEnemy3 = false;
+                        passedLoot = false;
+                        passedPotion = false;
+                        passedSword = false;
+                    
 			user = new Player();
 			guard = new Enemy();
 			object = new Item();
@@ -316,15 +354,28 @@ public class ContentPanel extends JPanel implements ActionListener
 			west.setVisible(true);
 			south.setVisible(true);
 
-			label4.setVisible(false);
+			label3.setVisible(false);
+                        label4.setVisible(false);
 			label5.setVisible(false);
-
+                        label8.setVisible(false);
 			help.setVisible(false);
+                        leaderboard.setVisible(false);
 
-			updateLabels(0, 0);
+			playerX = SQUARE0X - PERSONDIM;
+                        playerY = SQUARE0Y - PERSONDIM;
+                        
+                        health = 100;
+                        strength = 1;
+                        user.setHealth(health);
+                        user.setScore(0);
+                        
+                        updateLabels(0, 0, false);
 
 			label1.setVisible(true);
 			label2.setVisible(true);
+                        label3.setVisible(true);
+                        
+                        exit.setVisible(false);
 			play.setVisible(false);
 
 			/**
@@ -345,32 +396,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			{
 				System.out.println("Incorrect Image");
 			}
-
-			north = new JButton(new ImageIcon(northImage));
-			size = north.getPreferredSize();
-			north.setBounds(95, 440, (size.width - 20), size.height);
-			north.addActionListener(this);
-			add(north);
-
-			east = new JButton(new ImageIcon(eastImage));
-			size = east.getPreferredSize();
-			east.setBounds(185, 520, (size.width - 20), size.height);
-			east.addActionListener(this);
-			add(east);
-
-			west = new JButton(new ImageIcon(westImage));
-			size = west.getPreferredSize();
-			west.setBounds(10, 520, (size.width - 20), size.height);
-			west.addActionListener(this);
-			add(west);
-
-			south = new JButton(new ImageIcon(southImage));
-			size = south.getPreferredSize();
-			south.setBounds(95, 520, (size.width - 20), size.height);
-			south.addActionListener(this);
-			add(south);
-
-			repaint();
+                        repaint();
 
 			moveTimer.start();
 		}
@@ -381,21 +407,31 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		if (action.getSource() == leaderboard)
 		{
-			nameSave = new Save();
+                    leaderboard = (JToggleButton)action.getSource();
+                    if (leaderboard.isSelected()) 
+                    {
+                       leaderboard.setText("Back");
+                        nameSave = new Save();
 
-			leaderboard.setVisible(false);
-			nameSave.read();
-			String leaderboard = "<html>Leaderboard:<br/>";
-			for (int boardLen = 0; boardLen < (nameSave.namesSize()); boardLen++)
-			{
-				leaderboard += (nameSave.getName(boardLen) + "'s Score is: "
-						+ nameSave.getScore(boardLen) + "<br/>");
-			}
-			leaderboard += ("</html>");
-			label4.setText(leaderboard);
-			size = label4.getPreferredSize();
-			label4.setBounds(5, 60, size.width, size.height);
-			label4.setVisible(true);
+                        nameSave.read();
+                        String leaderboard = "<html>Leaderboard:<br/>";
+                        for (int boardLen = 0; boardLen < (nameSave.namesSize()); boardLen++)
+                        {
+                            leaderboard += (nameSave.getName(boardLen) + "'s Score is: "
+                                            + nameSave.getScore(boardLen) + "<br/>");
+                        }
+                        leaderboard += ("</html>");
+                        label4.setText(leaderboard);
+                        size = label4.getPreferredSize();
+                        label4.setBounds(5, 60, size.width, size.height);
+                        label4.setVisible(true);
+                    }
+                    else
+                    {
+                       leaderboard.setText("Leaderboard");
+                       label4.setVisible(false);
+                    }
+
 		}
 
 		/**
@@ -405,17 +441,21 @@ public class ContentPanel extends JPanel implements ActionListener
 		 */
 		if (action.getSource() == help)
 		{
-			help.setVisible(false);
+                    help = (JToggleButton)action.getSource();
+                    if (help.isSelected()) 
+                    {
+                        help.setText("Back");
 			label2.setVisible(false);
 			label3.setVisible(false);
 			label4.setVisible(false);
 			nameEntry.setVisible(false);
 
 			label1.setText("<html>"
-					+ "The Fool's Dungeon is a simple dungeon crawler <br/>"
-					+ "on an 8x8 grid. The objective is to get to the <br/>"
-					+ "treasure chest at end of map by <br/>"
-					+ "defeating enemies without dying. <br/>"
+					+ "The Fool's Dungeon is a simple dungeon <br/>"
+					+ "crawler on an 8x8 grid. The objective <br/>"
+					+ "is to get to the treasure chest at end <br/>"
+					+ " of map by defeating enemies without  <br/>"
+                                        + "dying. <br/><br/>"
 					+ "Your player can be controlled with the <br/>"
 					+ "W, A, S, and D keys.<br/>"
 					+ "<br/>"
@@ -423,14 +463,16 @@ public class ContentPanel extends JPanel implements ActionListener
 					+ "on a set time interval. When the player <br/>"
 					+ "comes in to contact with an enemy, due <br/>"
 					+ "to being on the same tile, a fight <br/>"
-					+ "sequence will occur. The fight is based on <br/>"
-					+ "strength and a dice roll. <br/>"
+					+ "sequence will occur. The fight is based <br/>"
+					+ "on strength and a dice roll. <br/>"
 					+ "<br/>"
-					+ "When the player reaches the treasure chest, the <br/>"
-					+ "game will end. When the player reaches a sword,<br/>"
-					+ "the player's strength will increase. When the<br/>"
-					+ "player reaches a potion, the player will pick<br/>"
-					+ "up the potion for use in battle."
+					+ "When the player reaches the treasure <br/>"
+					+ "chest, the game will end. When the <br/>"
+					+ "player reaches a sword,the player's <br/>"
+					+ "strength will increase. When the <br/>"
+					+ "player reaches a potion, the player <br/>"
+                                        + "will pick up the potion for use in <br/>"
+                                        + "battle."
 					+ "</html>");
 			size = label1.getPreferredSize();
 			label1.setBounds(5, 60, size.width, size.height);
@@ -442,8 +484,32 @@ public class ContentPanel extends JPanel implements ActionListener
 
 			size = play.getPreferredSize();
 			play.setBounds(100, 525, size.width, (size.height + 10));
+                    }
+                    else
+                    {
+                       help.setText("Help");
+                       label1.setVisible(false);
+                       label4.setVisible(true);
+                       
+                       label5.setText("<html>Press Play to Start the Game.<br/>"
+				+ " Press Help to see Game instructions.");
+                       size = label5.getPreferredSize();
+                       label5.setBounds(10, 290, size.width, size.height);
+                       label5.setVisible(true);
+                       
+                       size = play.getPreferredSize();
+                       play.setBounds(100, 335, size.width, (size.height + 10));
+                    }
 		}
 
+                /**
+		 * Exit Button ActionEvent for game exit
+		 */
+		if (action.getSource() == exit)
+		{
+                    System.exit(0);
+                }
+                
 		/**
 		 * Timer ActionEvent on Time interval pass for Enemy movement
 		 */
@@ -503,7 +569,6 @@ public class ContentPanel extends JPanel implements ActionListener
 			if (user.move(0))
 			{
 				playerX += 80;
-				playerLoc = user.getLocation();
 				playerContact();
 			}
 		}
@@ -652,31 +717,52 @@ public class ContentPanel extends JPanel implements ActionListener
 		} else if ((playerX == (drop1X + ITEMDIM - PERSONDIM)) && (playerY == (drop1Y + ITEMDIM - PERSONDIM)) && (!passedDrop1))
 		{
 			drop1Image = null;
-			updateLabels(potion, 0);
-			size = label7.getPreferredSize();
-			label7.setBounds(playerX, playerY, size.width, size.height);
-			label7.setVisible(true);
+                        if (dropDim == POTIONDIM)
+                        {
+                            updateLabels(potion, 0, false);
+                            size = label7.getPreferredSize();
+                            label7.setBounds(playerX, playerY, size.width, size.height);
+                            label7.setVisible(true);
+                        }
+                        else
+                        {
+                            updateLabels(0,0, true);
+                        }
 			passedDrop1 = true;
 		} else if ((playerX == (drop2X + ITEMDIM - PERSONDIM)) && (playerY == (drop2Y + ITEMDIM - PERSONDIM)) && (!passedDrop2))
 		{
 			drop2Image = null;
-			updateLabels(potion, 0);
-			size = label7.getPreferredSize();
-			label7.setBounds(playerX, playerY, size.width, size.height);
-			label7.setVisible(true);
+                        if (dropDim == POTIONDIM)
+                        {
+                            updateLabels(potion, 0, false);
+                            size = label7.getPreferredSize();
+                            label7.setBounds(playerX, playerY, size.width, size.height);
+                            label7.setVisible(true);
+                        }
+                        else
+                        {
+                            updateLabels(0,0, true);
+                        }
 			passedDrop2 = true;
 		} else if ((playerX == (drop3X + ITEMDIM - PERSONDIM)) && (playerY == (drop3Y + ITEMDIM - PERSONDIM)) && (!passedDrop3))
 		{
 			drop3Image = null;
-			updateLabels(potion, 0);
-			size = label7.getPreferredSize();
-			label7.setBounds(playerX, playerY, size.width, size.height);
-			label7.setVisible(true);
+                        if (dropDim == POTIONDIM)
+                        {
+                            updateLabels(potion, 0, false);
+                            size = label7.getPreferredSize();
+                            label7.setBounds(playerX, playerY, size.width, size.height);
+                            label7.setVisible(true);
+                        }
+                        else
+                        {
+                            updateLabels(0,0, true);
+                        }
 			passedDrop3 = true;
 		} else if (((playerX == (enemy1X - 80)) || (playerX == enemy1X)) && (playerY == enemy1Y || (playerY == (enemy1Y - 80))) && (!passedEnemy1))
 		{
 			enemy1Image = null;
-			updateLabels(damage, 0);
+			updateLabels(damage, 0, false);
 			size = label6.getPreferredSize();
 			label6.setBounds(playerX, playerY, size.width, size.height);
 			label6.setVisible(true);
@@ -692,10 +778,12 @@ public class ContentPanel extends JPanel implements ActionListener
                             int n = rand.nextInt(5);                   // Change this number as needed
                             if (n > 2)
                             {
+                                dropDim = ITEMDIM;
                                 drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
                             }
                             else
                             {
+                                dropDim = POTIONDIM;
                                 drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
                             } 
 			} catch (IOException e)
@@ -706,7 +794,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		} else if (((playerX == (enemy2X - 80)) || (playerX == enemy2X)) && (playerY == enemy2Y || (playerY == (enemy2Y - 80))) && (!passedEnemy2))
 		{
 			enemy2Image = null;
-			updateLabels(damage, 0);
+			updateLabels(damage, 0, false);
 			size = label6.getPreferredSize();
 			label6.setBounds(playerX, playerY, size.width, size.height);
 			label6.setVisible(true);
@@ -722,11 +810,13 @@ public class ContentPanel extends JPanel implements ActionListener
                             int n = rand.nextInt(5);                   // Change this number as needed
                             if (n > 2)
                             {
-                                drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
+                                dropDim = ITEMDIM;
+                                drop2Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
                             }
                             else
                             {
-                                drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                                dropDim = POTIONDIM;
+                                drop2Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
                             } 
 			} catch (IOException e)
 			{
@@ -736,7 +826,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		} else if ((playerX == enemy3X || (playerX == (enemy3X - 80))) && (playerY == enemy3Y || playerY == enemy3Y - 80) && (!passedEnemy3))
 		{
 			enemy3Image = null;
-			updateLabels(damage, 0);
+			updateLabels(damage, 0, false);
 			size = label6.getPreferredSize();
 			label6.setBounds(playerX, playerY, size.width, size.height);
 			label6.setVisible(true);
@@ -752,11 +842,13 @@ public class ContentPanel extends JPanel implements ActionListener
                             int n = rand.nextInt(5);                   // Change this number as needed
                             if (n > 2)
                             {
-                                drop1Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
+                                dropDim = ITEMDIM;
+                                drop3Image = ImageIO.read(new File("src/main/resources/assets/sword item silhouette.png")); 
                             }
                             else
                             {
-                                drop1Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
+                                dropDim = POTIONDIM;
+                                drop3Image = ImageIO.read(new File("src/main/resources/assets/potion silhouette.png"));
                             } 
 			} catch (IOException e)
 			{
@@ -765,24 +857,14 @@ public class ContentPanel extends JPanel implements ActionListener
 			// user.fight();
 		} else if ((playerX == (lootX + ITEMDIM - PERSONDIM)) && (playerY == (lootY + ITEMDIM - PERSONDIM)) && (!passedLoot))
 		{
-			armorImage = null;
-			drop1Image = null;
-			drop2Image = null;
-			drop3Image = null;
-			enemy1Image = null;
-			enemy2Image = null;
-			lootImage = null;
-			playerImage = null;
-			potionImage = null;
-			swordImage = null;
-
-			updateLabels(0, 1000);
+			updateLabels(0, 1000, false);
+                        endGame(true);
 			nameSave.update(user);
 			passedLoot = true;
-		} else if ((playerX == (potionX + ITEMDIM - PERSONDIM)) && (playerY == (potionY + ITEMDIM - PERSONDIM)) && (!passedPotion))
+		} else if ((playerX == (potionX + ITEMDIM - PERSONDIM)) && (playerY == (potionY + ITEMDIM - PERSONDIM)) && (!passedPotion) && (health != 100))
 		{
 			potionImage = null;
-			updateLabels(potion, 0);
+			updateLabels(potion, 0, false);
 			size = label7.getPreferredSize();
 			label7.setBounds(playerX, playerY, size.width, size.height);
 			label7.setVisible(true);
@@ -791,7 +873,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		{
 			swordImage = null;
 			passedSword = true;
-			object.createSword();
+			updateLabels(0,0, true);
 		}
 		repaint();
 	}
@@ -804,7 +886,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * value
 	 * @param changeScore used to calculate score when loot is reached
 	 */
-	private void updateLabels(int changeHealth, int changeScore)
+	private void updateLabels(int changeHealth, int changeScore, boolean changeStrength)
 	{
 		health += changeHealth;
 		user.setHealth(health);
@@ -819,18 +901,89 @@ public class ContentPanel extends JPanel implements ActionListener
 		{
 			label1.setText("<html>Health: " + "<font color='F42506'>" + user.getHealth() + "</font></html>");
 		}
+                
 		size = label1.getPreferredSize();
-		label1.setBounds(10, 250, size.width, size.height);
-
-		if (changeScore != 0)
-		{
-			user.setScore(changeScore + (health * 10)); // Score set should calculate based on current health, strength and generic value for getting to loot
-		}
+		label1.setBounds(10, 220, size.width, size.height);
+                user.setScore(changeScore + (user.getHealth() * 10));
+                
+                if (user.getHealth() == 0)
+                {
+                    endGame(false);
+                }
+                
 		label2.setText("Score: " + user.getScore());
 		size = label2.getPreferredSize();
-		label2.setBounds(10, 300, size.width, size.height);
+		label2.setBounds(10, 270, size.width, size.height);
+                
+                if (changeStrength)
+                {
+                    object.createSword();
+                    strength = object.getWeaponStrength();
+                    label3.setText("Strength: " + strength + "X");
+                    size = label3.getPreferredSize();
+                    label3.setBounds(10, 320, size.width, size.height);
+                }
+                else
+                {
+                    label3.setText("Strength: "+ strength + "X");
+                    size = label3.getPreferredSize();
+                    label3.setBounds(10, 320, size.width, size.height);
+                    
+                }
 	}
-	
+
+        /**
+	 * Hides GUI elements and images to show victory or death screen
+	 *
+	 * @param isWin checks if end of game was a win or loss to display proper screen
+	 */
+        private void endGame (boolean isWin)
+        {
+            armorImage = null;
+            drop1Image = null;
+            drop2Image = null;
+            drop3Image = null;
+            enemy1Image = null;
+            enemy2Image = null;
+            lootImage = null;
+            playerImage = null;
+            potionImage = null;
+            swordImage = null;
+            
+            label1.setVisible(false);
+            label2.setVisible(false);
+            label3.setVisible(false);
+            
+            north.setVisible(false);
+            east.setVisible(false);
+            west.setVisible(false);
+            south.setVisible(false);
+            
+            size = play.getPreferredSize();
+            play.setBounds(100, 370, size.width, (size.height+10));
+            play.setVisible(true);
+            
+            exit.setVisible(true);
+            if (isWin == true)
+            {
+                label8.setText("<html>You won! Your score was " + user.getScore() + ",<br/>"
+                                + "your remaining health was " + user.getHealth() + "/100,<br/>"
+                                + "and your final strength modifier was " + object.getWeaponStrength() + ".<br/>"
+                                + "Would you like to play again?<html/>");
+                size = label8.getPreferredSize();
+		label8.setBounds(10, 290, size.width, size.height);
+                leaderboard.setVisible(true);
+                label8.setVisible(true);
+            }
+            else
+            {
+                label8.setText("<html>You died... Your score was " + user.getScore() + "<br/>"
+                                + "Would you like to try again?<html/>");
+                size = label8.getPreferredSize();
+		label8.setBounds(10, 300, size.width, (size.height+10));
+                label8.setVisible(true);
+            }
+        }
 	// Boolean values to allow singular contact with entities
 	private boolean passedArmor = false;
 	private boolean passedDrop1 = false;
@@ -902,11 +1055,11 @@ public class ContentPanel extends JPanel implements ActionListener
 	private final int SQUAREDIM = 640;
 	private final int SIDEPANEL = 300;
 
-	// Image size dimensions for square tile size
+	//Image size dimensions for square tile size
 	private final int PERSONDIM = 75;
 	private final int ITEMDIM = 60;
 	private final int POTIONDIM = 30;
-	
+        
 	// Square Tile Constants for X and Y locations in GUI grid
 	private final int SQUARE0X = 380;
 	private final int SQUARE1X = 460;
@@ -928,6 +1081,9 @@ public class ContentPanel extends JPanel implements ActionListener
 
 	// Health variable for GUI text display
 	private int health;
+        
+        // Strength variable for GUI text display
+	private int strength;
 
 	// Integer values for health changing
 	private int damage = -33;
@@ -944,6 +1100,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	private int drop2Y = SQUARE2Y - ITEMDIM;
 	private int drop3X = SQUARE6X - ITEMDIM;
 	private int drop3Y = SQUARE7Y - ITEMDIM;
+        private int dropDim = POTIONDIM;
 
 	// Initial Enemy X and Y variables for Enemy Tile Placement
 	private int enemy1X = SQUARE3X - PERSONDIM;
@@ -972,14 +1129,11 @@ public class ContentPanel extends JPanel implements ActionListener
 	// Item variable for Item class use and passing to Map
 	private Item object;
 
+        // Panel button to exit the game when clicked
+	private JButton exit;
+        
 	// Panel button to play the game when clicked
 	private JButton play;
-
-	// Panel button to help the game when clicked
-	private JButton help;
-
-	// Panel button to Leaderboard the game when clicked
-	private JButton leaderboard;
 
 	// Panel button to move player north when clicked
 	private JButton north;
@@ -987,16 +1141,22 @@ public class ContentPanel extends JPanel implements ActionListener
 	// Panel button to move player east when clicked
 	private JButton east;
 
-	//  Panel button to move player west when clicked
+	// Panel button to move player west when clicked
 	private JButton west;
 
 	// Panel button to move player south when clicked
 	private JButton south;
+        
+        // Panel button to toggle help when clicked
+	private JToggleButton help;
 
+	// Panel button to toggle Leaderboard when clicked
+	private JToggleButton leaderboard;
+        
 	// JComponent for KeyBinding method
 	private JComponent component;
 
-	//  Panel labels to display
+	// Panel labels to display
 	private JLabel label1;
 	private JLabel label2;
 	private JLabel label3;
@@ -1004,6 +1164,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	private JLabel label5;
 	private JLabel label6;
 	private JLabel label7;
+        private JLabel label8;
 
 	// Panel button to nameEntry the game when clicked
 	private JTextField nameEntry;

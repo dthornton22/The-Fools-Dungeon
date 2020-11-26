@@ -39,6 +39,9 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * Constructs the panel of the application where the GUI items will be and
 	 * the user will interact with includes instances of classes in order to use
 	 * methods and pass to Map updates scores.txt to sort previous entry
+     * @param player
+     * @param enemy
+     * @param item
 	 */
 	public ContentPanel(Player player, Enemy enemy, Item item)
 	{
@@ -264,6 +267,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	 * References super method and overrides functionality Draws the image onto
 	 * screen with dimensions parameter drawer uses Graphics class to draw
 	 * images
+     * @param drawer
 	 */
 	@Override
 	public void paintComponent(Graphics drawer)
@@ -287,6 +291,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	/**
 	 * Method for actions to be performed based on ActionEvent overridden from
 	 * ActionListener interface parameter e is input action
+     * @param action
 	 */
 	@Override
 	public void actionPerformed(ActionEvent action)
@@ -601,6 +606,11 @@ public class ContentPanel extends JPanel implements ActionListener
 	/*
          * keyBinding method for Player movement on keypress
 	 */
+
+    /**
+     *
+     */
+
 	public void keyBinding()
 	{
 		javax.swing.Action moveNorth = new AbstractAction()

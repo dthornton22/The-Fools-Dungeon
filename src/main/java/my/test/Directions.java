@@ -12,9 +12,31 @@ package main.java.my.test;
 public class Directions
 {
 
-	public enum Direction
+    /**
+     *
+     */
+    public enum Direction
 	{
-		UP, DOWN, LEFT, RIGHT
+
+        /**
+         *
+         */
+        UP,
+
+            /**
+             *
+             */
+            DOWN,
+
+        /**
+         *
+         */
+        LEFT,
+
+        /**
+         *
+         */
+        RIGHT
 	}
 	private Direction anyDirection;
 
@@ -35,6 +57,11 @@ public class Directions
 	}
 
 	// change from int to enum
+
+    /**
+     *
+     * @param newDirection
+     */
 	public void move(Direction newDirection)
 	{
 		int mylocation[] = new int[2];

@@ -207,7 +207,11 @@ public class Save
 		return namesList.get(index);
 	}
 
-	public int namesSize()
+    /**
+     *
+     * @return
+     */
+    public int namesSize()
 	{
 		return namesList.size();
 	}

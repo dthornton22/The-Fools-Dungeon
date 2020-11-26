@@ -21,6 +21,7 @@ public class Leaderboard
 	/**
 	 * Leaderboard's function addPlayerArray receives a new player and sorts
 	 * them into the leaderboard based on their score
+     * @param player1
 	 */
 	public void addPlayer(Player player1)
 	{
@@ -50,6 +51,7 @@ public class Leaderboard
 	 * Leaderboard's function addPlayerArray receives a new player and sorts
 	 * them into the leaderboard based on their score (uses array instead of
 	 * ArrayList)
+     * @param player1
 	 */
 	public void addPlayerArray(Player player1)
 	{
@@ -90,6 +92,7 @@ public class Leaderboard
 	/**
 	 * Leaderboard's function enterPlayer asks for the user's name and sets
 	 * their name to the user's input
+     * @param player1
 	 */
 	public void enterPlayer(Player player1)
 	{

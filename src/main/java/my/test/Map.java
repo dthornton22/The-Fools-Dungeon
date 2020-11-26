@@ -12,7 +12,11 @@ package main.java.my.test;
 public class Map
 {
 
-	public static void main(String[] args)
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args)
 	{
 		/**
 		 * Creates Frame and Panel instances to construct application on run

@@ -16,6 +16,7 @@ public abstract class Entity
 	 * Entity's function fight executes combat between the user and an enemy
 	 *
 	 * @param enemy, player
+     * @param player
 	 * @return whoWon
 	 */
 	public boolean fight(Enemy enemy, Player player)
@@ -83,6 +84,7 @@ public abstract class Entity
 	 * location is a wall or in some other way restricted
 	 *
 	 * @param dir
+     * @return 
 	 */
 	public boolean move(int dir)
 	{

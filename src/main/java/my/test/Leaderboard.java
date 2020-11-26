@@ -16,7 +16,7 @@ public class Leaderboard
 {
 
 	private Player playersArray[] = new Player[10];
-	private ArrayList<Player> players = new ArrayList();
+	private ArrayList<Player> players = new ArrayList<>();
 
 	/**
 	 * Leaderboard's function addPlayerArray receives a new player and sorts

@@ -3,14 +3,9 @@
  * Save.java
  * CS 321 Team 9 Fall 2020
  * Creates the Save class
- * Apart of main.java.my.test package so it can use other classes in package
  */
 package main.java.my.test;
 
-/**
- * Imports to allow file reading and writing and ArrayList to store read
- * contents
- */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

@@ -2,9 +2,7 @@
  * @author David Thornton
  * Player.java
  * CS 321 Team 9 Fall 2020
- * Creates the Player class
- * and its actions.
- * Apart of main.java.my.test package so it can use other classes in package
+ * Creates the Player class and its actions.
  */
 package main.java.my.test;
 

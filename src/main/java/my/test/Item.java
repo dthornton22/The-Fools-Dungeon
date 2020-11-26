@@ -1,21 +1,21 @@
 /*
  * @author Brandon Jett
  * Item.java
- * Latest Date Modified: Oct 27, 2020
- * This class creates item objects that modify the players various values or
- * helps them in some way such as a health pack.
+ * CS 321 Team 9 Fall 2020
+ * Creates the Item class
  */
 package main.java.my.test;
 
 import java.util.Random;
 
 /**
- * A class for interacting with items
+ * This class creates item objects that modify the players various values or
+ * helps them in some way such as a health pack.
  */
 public class Item
 {
 
-	//Variable Declarations
+	// Variable Declarations
 	private int weaponStrength;
 	private static final int HEALTH_INCREASE = 10;
 
@@ -23,9 +23,7 @@ public class Item
 	 * This function creates the strength modifier on a weapon it takes an input
 	 * of the current damage modifier on the current weapon to ensure that this
 	 * weapon is better.
-	 *
 	 * @param int current weapons weapon strength value
-	 *
 	 */
 	private void setWeaponStrength(int currentStrength)
 	{

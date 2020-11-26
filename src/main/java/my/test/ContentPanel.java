@@ -2,14 +2,10 @@
  * @author Will Osborne
  * ContentPanel.java
  * CS 321 Team 9 Fall 2020
- * Creates the ContentPanel class for the Map Class to build GUI
- * Apart of main.java.my.test package so it can use other classes in package
+ * Creates the ContentPanel class for the Map class to build GUI
  */
 package main.java.my.test;
 
-/**
- * Import statements that allow graphical content and functionality in class
- */
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -199,7 +195,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		//north = new JButton(new ImageIcon(northImage));
+		// north = new JButton(new ImageIcon(northImage));
 		north = new JButton();
 		north.setVisible(false);
 
@@ -208,7 +204,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		//east = new JButton(new ImageIcon(eastImage));
+		// east = new JButton(new ImageIcon(eastImage));
 		east = new JButton();
 		east.setVisible(false);
 
@@ -217,7 +213,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		//west = new JButton(new ImageIcon(westImage));
+		// west = new JButton(new ImageIcon(westImage));
 		west = new JButton();
 		west.setVisible(false);
 
@@ -226,7 +222,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		 * arbitrary initial dimensions on personal computer left in for
 		 * possible later use
 		 */
-		//south = new JButton(new ImageIcon(southImage));
+		// south = new JButton(new ImageIcon(southImage));
 		south = new JButton();
 		south.setVisible(false);
 	}
@@ -277,7 +273,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			user.setScore(0);
 			String input = nameEntry.getText();
                         
-                        //input validation of user name, confirming a name is entered
+                        // input validation of user name, confirming a name is entered
                         if (!input.isEmpty())
                         {
                             input = "---";
@@ -652,7 +648,7 @@ public class ContentPanel extends JPanel implements ActionListener
 		{
 			armorImage = null;
 			passedArmor = true;
-			//object.createArmor();
+			// object.createArmor();
 		} else if ((playerX == (drop1X + ITEMDIM - PERSONDIM)) && (playerY == (drop1Y + ITEMDIM - PERSONDIM)) && (!passedDrop1))
 		{
 			drop1Image = null;
@@ -706,7 +702,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			{
 				System.out.println();
 			}
-			//user.fight();
+			// user.fight();
 		} else if (((playerX == (enemy2X - 80)) || (playerX == enemy2X)) && (playerY == enemy2Y || (playerY == (enemy2Y - 80))) && (!passedEnemy2))
 		{
 			enemy2Image = null;
@@ -736,7 +732,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			{
 				System.out.println();
 			}
-			//user.fight();
+			// user.fight();
 		} else if ((playerX == enemy3X || (playerX == (enemy3X - 80))) && (playerY == enemy3Y || playerY == enemy3Y - 80) && (!passedEnemy3))
 		{
 			enemy3Image = null;
@@ -766,7 +762,7 @@ public class ContentPanel extends JPanel implements ActionListener
 			{
 				System.out.println();
 			}
-			//user.fight();
+			// user.fight();
 		} else if ((playerX == (lootX + ITEMDIM - PERSONDIM)) && (playerY == (lootY + ITEMDIM - PERSONDIM)) && (!passedLoot))
 		{
 			armorImage = null;
@@ -812,7 +808,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	{
 		health += changeHealth;
 		user.setHealth(health);
-		//user.usePotion(potion); Wasn't clear how this was supposed to work
+		// user.usePotion(potion); Wasn't clear how this was supposed to work
 		if (health > 70)
 		{
 			label1.setText("<html>Health: " + "<font color='48F406'>" + user.getHealth() + "</font></html>");
@@ -828,16 +824,14 @@ public class ContentPanel extends JPanel implements ActionListener
 
 		if (changeScore != 0)
 		{
-			user.setScore(changeScore + (health * 10)); //Score set should calculate based on current health, strength and generic value for getting to loot
+			user.setScore(changeScore + (health * 10)); // Score set should calculate based on current health, strength and generic value for getting to loot
 		}
 		label2.setText("Score: " + user.getScore());
 		size = label2.getPreferredSize();
 		label2.setBounds(10, 300, size.width, size.height);
 	}
-
-	/**
-	 * Boolean values to allow singular contact with entities
-	 */
+	
+	// Boolean values to allow singular contact with entities
 	private boolean passedArmor = false;
 	private boolean passedDrop1 = false;
 	private boolean passedDrop2 = false;
@@ -849,112 +843,71 @@ public class ContentPanel extends JPanel implements ActionListener
 	private boolean passedPotion = false;
 	private boolean passedSword = false;
 
-	/**
-	 * Dimension variable to get size of JPanel Components for placement
-	 */
+	// Dimension variable to get size of JPanel Components for placement
 	private Dimension size;
 
-	/**
-	 * Enemy variable for Enemy class use and passing to Map
-	 */
+	// Enemy variable for Enemy class use and passing to Map
 	private Enemy guard;
 
-	/**
-	 * Image variable to hold background Image
-	 */
+	// Image variable to hold background Image
 	private Image backgroundImage;
 
-	/**
-	 * Image variable to hold armor item Image
-	 */
+	// Image variable to hold armor item Image
 	private Image armorImage;
 
-	/**
-	 * Image variable to hold first drop item Image
-	 */
+	// Image variable to hold first drop item Image
 	private Image drop1Image;
 
-	/**
-	 * Image variable to hold second drop item Image
-	 */
+	// Image variable to hold second drop item Image
 	private Image drop2Image;
 
-	/**
-	 * Image variable to hold second drop item Image
-	 */
+	// Image variable to hold second drop item Image
 	private Image drop3Image;
 
-	/**
-	 * Image variable to hold enemy Image
-	 */
+	// Image variable to hold enemy Image
 	private Image enemy1Image;
 
-	/**
-	 * Image variable to hold enemy Image
-	 */
+	// Image variable to hold enemy Image
 	private Image enemy2Image;
 
-	/**
-	 * Image variable to hold enemy Image
-	 */
+	// Image variable to hold enemy Image
 	private Image enemy3Image;
 
-	/**
-	 * Image variable to hold loot item Image
-	 */
+	// Image variable to hold loot item Image
 	private Image lootImage;
 
-	/**
-	 * Image variable to hold potion item Image
-	 */
+	// Image variable to hold potion item Image
 	private Image potionImage;
 
-	/**
-	 * Image variable to hold player Image
-	 */
+	// Image variable to hold player Image
 	private Image playerImage;
 
-	/**
-	 * Image variable to hold sword item Image
-	 */
+	// Image variable to hold sword item Image
 	private Image swordImage;
 
-	/**
-	 * Image variable to hold north button Image
-	 */
+	// Image variable to hold north button Image
 	private Image northImage;
 
-	/**
-	 * Image variable to hold east button Image
-	 */
+	// Image variable to hold east button Image
 	private Image eastImage;
 
-	/**
-	 * Image variable to hold west button Image
-	 */
+	// Image variable to hold west button Image
 	private Image westImage;
 
-	/**
-	 * Image variable to hold south button Image
-	 */
+	// Image variable to hold south button Image
 	private Image southImage;
 
-	/**
-	 * GUI Dimensions constants
-	 */
+	// GUI Dimensions constants
 	private final int WINDOWX = 940;
 	private final int SQUAREDIM = 640;
 	private final int SIDEPANEL = 300;
 
-	/**
-	 * Image size dimensions for square tile size
-	 */
+	// Image size dimensions for square tile size
 	private final int PERSONDIM = 75;
 	private final int ITEMDIM = 60;
 	private final int POTIONDIM = 30;
-	/**
-	 * Square Tile Constants for X and Y locations in GUI grid
-	 */
+	
+	// Square Tile Constants for X and Y locations in GUI grid
 	private final int SQUARE0X = 380;
 	private final int SQUARE1X = 460;
 	private final int SQUARE2X = 540;
@@ -973,26 +926,18 @@ public class ContentPanel extends JPanel implements ActionListener
 	private final int SQUARE6Y = 560;
 	private final int SQUARE7Y = 640;
 
-	/**
-	 * Health variable for GUI text display
-	 */
+	// Health variable for GUI text display
 	private int health;
 
-	/**
-	 * Integer values for health changing
-	 */
+	// Integer values for health changing
 	private int damage = -33;
 	private int potion;
 
-	/**
-	 * Initial Armor X and Y variables for Armor Tile Placement
-	 */
+	// Initial Armor X and Y variables for Armor Tile Placement
 	private int armorX = SQUARE4X - ITEMDIM;
 	private int armorY = SQUARE7Y - ITEMDIM;
 
-	/**
-	 * Initial Drop Item X and Y variables for Drop Item Tile Placement
-	 */
+	// Initial Drop Item X and Y variables for Drop Item Tile Placement
 	private int drop1X = SQUARE3X - ITEMDIM;
 	private int drop1Y = SQUARE7Y - ITEMDIM;
 	private int drop2X = SQUARE7X - ITEMDIM;
@@ -1000,9 +945,7 @@ public class ContentPanel extends JPanel implements ActionListener
 	private int drop3X = SQUARE6X - ITEMDIM;
 	private int drop3Y = SQUARE7Y - ITEMDIM;
 
-	/**
-	 * Initial Enemy X and Y variables for Enemy Tile Placement
-	 */
+	// Initial Enemy X and Y variables for Enemy Tile Placement
 	private int enemy1X = SQUARE3X - PERSONDIM;
 	private int enemy1Y = SQUARE6Y - PERSONDIM;
 	private int enemy2X = SQUARE7X - PERSONDIM;
@@ -1010,78 +953,50 @@ public class ContentPanel extends JPanel implements ActionListener
 	private int enemy3X = SQUARE6X - PERSONDIM;
 	private int enemy3Y = SQUARE7Y - PERSONDIM;
 
-	/**
-	 * Initial Loot X and Y variables for Loot Tile Placement
-	 */
+	// Initial Loot X and Y variables for Loot Tile Placement
 	private int lootX = SQUARE7X - ITEMDIM;
 	private int lootY = SQUARE7Y - ITEMDIM;
 
-	/**
-	 * Initial Player X and Y variables for Player Tile Placement
-	 */
+	// Initial Player X and Y variables for Player Tile Placement
 	private int playerX = SQUARE0X - PERSONDIM;
 	private int playerY = SQUARE0Y - PERSONDIM;
 
-	/**
-	 * Initial Potion X and Y variables for Potion Tile Placement
-	 */
+	// Initial Potion X and Y variables for Potion Tile Placement
 	private int potionX = SQUARE0X - ITEMDIM;
 	private int potionY = SQUARE7Y - ITEMDIM;
 
-	/**
-	 * Initial Sword X and Y variables for Sword Tile Placement
-	 */
+	// Initial Sword X and Y variables for Sword Tile Placement
 	private int swordX = SQUARE6X - ITEMDIM;
 	private int swordY = SQUARE0Y - PERSONDIM;
 
-	/**
-	 * Item variable for Item class use and passing to Map
-	 */
+	// Item variable for Item class use and passing to Map
 	private Item object;
 
-	/**
-	 * Panel button to play the game when clicked
-	 */
+	// Panel button to play the game when clicked
 	private JButton play;
 
-	/**
-	 * Panel button to help the game when clicked
-	 */
+	// Panel button to help the game when clicked
 	private JButton help;
 
-	/**
-	 * Panel button to Leaderboard the game when clicked
-	 */
+	// Panel button to Leaderboard the game when clicked
 	private JButton leaderboard;
 
-	/**
-	 * Panel button to move player north when clicked
-	 */
+	// Panel button to move player north when clicked
 	private JButton north;
 
-	/**
-	 * Panel button to move player east when clicked
-	 */
+	// Panel button to move player east when clicked
 	private JButton east;
 
-	/**
-	 * Panel button to move player west when clicked
-	 */
+	//  Panel button to move player west when clicked
 	private JButton west;
 
-	/**
-	 * Panel button to move player south when clicked
-	 */
+	// Panel button to move player south when clicked
 	private JButton south;
 
-	/**
-	 * JComponent for KeyBinding method
-	 */
+	// JComponent for KeyBinding method
 	private JComponent component;
 
-	/**
-	 * Panel labels to display
-	 */
+	//  Panel labels to display
 	private JLabel label1;
 	private JLabel label2;
 	private JLabel label3;
@@ -1090,28 +1005,18 @@ public class ContentPanel extends JPanel implements ActionListener
 	private JLabel label6;
 	private JLabel label7;
 
-	/**
-	 * Panel button to nameEntry the game when clicked
-	 */
+	// Panel button to nameEntry the game when clicked
 	private JTextField nameEntry;
 
-	/**
-	 * Player variable for Player class use and passing to Map
-	 */
+	// Player variable for Player class use and passing to Map
 	private Player user;
 
-	/**
-	 * Save variable to allow save of user names
-	 */
+	// Save variable to allow save of user names
 	private Save nameSave;
 
-	/**
-	 * Timer variable to allow movement of Enemy on time interval
-	 */
+	// Timer variable to allow movement of Enemy on time interval
 	private Timer labelTimer;
 
-	/**
-	 * Timer variable to allow movement of Enemy on time interval
-	 */
+	// Timer variable to allow movement of Enemy on time interval
 	private Timer moveTimer;
 }

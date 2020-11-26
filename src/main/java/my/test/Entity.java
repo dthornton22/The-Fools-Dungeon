@@ -3,7 +3,6 @@
  * Entity.java
  * CS 321 Team 9 Fall 2020
  * Creates the Entity class
- * Apart of main.java.my.test package so it can use other classes in package
  */
 package main.java.my.test;
 
@@ -90,7 +89,7 @@ public abstract class Entity
 		Map map1 = new Map();
 		switch (dir)
 		{
-			//case east
+			// case east
 			case 0:
 				if (location[1] == 7)
 				{
@@ -101,7 +100,7 @@ public abstract class Entity
 					return true;
 				}
 				break;
-			//case north
+			// case north
 			case 1:
 				if (location[0] == 0)
 				{
@@ -112,7 +111,7 @@ public abstract class Entity
 					return true;
 				}
 				break;
-			//case west
+			// case west
 			case 2:
 				if (location[1] == 0)
 				{
@@ -123,7 +122,7 @@ public abstract class Entity
 					return true;
 				}
 				break;
-			//case south
+			// case south
 			case 3:
 				if (location[0] == 7)
 				{

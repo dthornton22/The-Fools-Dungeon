@@ -3,7 +3,6 @@
  * Map.java
  * CS 321 Team 9 Fall 2020
  * Creates the Map class
- * Apart of main.java.my.test package so it can use other classes in package
  */
 package main.java.my.test;
 
@@ -40,7 +39,7 @@ public class Map
 		/**
 		 * Initializes map grid with arbitrary constant square boundaries
 		 */
-		//mapMatrix = new int[MAPBOUNDS][MAPBOUNDS];
+		// mapMatrix = new int[MAPBOUNDS][MAPBOUNDS];
 	}
 
 	/**

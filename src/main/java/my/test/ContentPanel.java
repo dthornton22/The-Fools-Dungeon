@@ -12,11 +12,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -24,7 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
-import javax.swing.KeyStroke;
 import javax.swing.Timer;
 import java.util.Random;
 
@@ -607,112 +604,6 @@ public class ContentPanel extends JPanel implements ActionListener
 	/*
          * keyBinding method for Player movement on keypress
 	 */
-
-    /**
-     *
-     */
-
-	public void keyBinding()
-	{
-		javax.swing.Action moveNorth = new AbstractAction()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				playerY -= 80;
-				repaint();
-			}
-		};
-
-		KeyStroke northStroke = KeyStroke.getKeyStroke(KeyEvent.VK_W, 0);
-		component.getActionMap().put("north", moveNorth);
-		component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(northStroke, "north");
-
-		javax.swing.Action moveEast = new AbstractAction()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				playerX += 80;
-				repaint();
-			}
-		};
-
-		KeyStroke eastStroke = KeyStroke.getKeyStroke(KeyEvent.VK_D, 0);
-		component.getActionMap().put("east", moveEast);
-		component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(eastStroke, "east");
-
-		javax.swing.Action moveSouth = new AbstractAction()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				playerY += 80;
-				repaint();
-			}
-		};
-
-		KeyStroke southStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, 0);
-		component.getActionMap().put("south", moveSouth);
-		component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(southStroke, "south");
-
-		javax.swing.Action moveWest = new AbstractAction()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				playerX -= 80;
-				repaint();
-			}
-		};
-
-		KeyStroke westStroke = KeyStroke.getKeyStroke(KeyEvent.VK_A, 0);
-		component.getActionMap().put("west", moveWest);
-		component.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(westStroke, "west");
-
-		/*InputMap inMap = component.getInputMap(WHEN_IN_FOCUSED_WINDOW);
-            ActionMap actMap = component.getActionMap();
-
-            inMap.put(KeyStroke.getKeyStroke("W"),"north");
-            actMap.put("north", new AbstractAction(){
-                    @Override
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        playerY -= 80;
-                        repaint();
-                    }
-                });
-
-            inMap.put(KeyStroke.getKeyStroke("D"),"east");
-            actMap.put("east", new AbstractAction(){
-                @Override
-                public void actionPerformed(ActionEvent e)
-                {
-                    playerX += 80;
-                    repaint();
-                }
-            });
-
-            inMap.put(KeyStroke.getKeyStroke("S"),"south");
-            actMap.put("south", new AbstractAction(){
-                @Override
-                public void actionPerformed(ActionEvent e)
-                {
-                    playerY += 80;
-                    repaint();
-                }
-            });
-
-            inMap.put(KeyStroke.getKeyStroke("A"),"west");
-            actMap.put("west", new AbstractAction(){
-                @Override
-                public void actionPerformed(ActionEvent e)
-                {
-                    playerX -= 80;
-                    repaint();
-                }
-            });*/
-	}
 
 	/**
 	 * Checks if player Location is touching or near entities based on entity

@@ -2,3 +2,4 @@ kayden, 1870
 tiana, 1500
 quinn, 0
 laura, 0
+laura, 0

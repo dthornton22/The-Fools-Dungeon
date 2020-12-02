@@ -13,87 +13,76 @@ public class Directions
 {
 
     /**
-     *
+     * Directions' enum Direction provides a shortcut for the 4 directions
      */
     public enum Direction
-	{
-
-        /**
-         *
-         */
+    {
         UP,
-
-            /**
-             *
-             */
-            DOWN,
-
-        /**
-         *
-         */
+        DOWN,
         LEFT,
-
-        /**
-         *
-         */
         RIGHT
-	}
-	private Direction anyDirection;
-
-	/**
-	 * @return the anyDirection
-	 */
-	public Direction getAnyDirection()
-	{
-		return anyDirection;
-	}
-
-	/**
-	 * @param anyDirection the anyDirection to set
-	 */
-	public void setAnyDirection(Direction anyDirection)
-	{
-		this.anyDirection = anyDirection;
-	}
-
-	// change from int to enum
+    }
 
     /**
+     * Direction's function getAnyDirection returns the direction
+     *
+     * @return anyDirection
+     */
+    public Direction getAnyDirection()
+    {
+	return anyDirection;
+    }
+
+    /**
+     * Direction's function setAnyDirection sets the direction to the parameter
+     *
+     * @param anyDirection
+     */
+    public void setAnyDirection(Direction anyDirection)
+    {
+	this.anyDirection = anyDirection;
+    }
+
+    /**
+     * Direction's function move handles movement given a direction
      *
      * @param newDirection
      */
-	public void move(Direction newDirection)
+    public void move(Direction newDirection)
+    {
+	int mylocation[] = new int[2];
+	Map anyMap = new Map();
+	switch (newDirection)
 	{
-		int mylocation[] = new int[2];
-		Map anyMap = new Map();
-		// Entity.getLocation() = mylocation;
-		switch (newDirection)
+            case RIGHT: // East (D)
+		if (!anyMap.isWall(mylocation[0], (mylocation[1] + 1)))
 		{
-			case RIGHT: // East (D)
-				if (!anyMap.isWall(mylocation[0], (mylocation[1] + 1)))
-				{
-					mylocation[1] += 1;
-				}
-				break;
-			case UP: // North (W)
-				if (!anyMap.isWall((mylocation[0] - 1), mylocation[1]))
-				{
-					mylocation[0] += 1;
-				}
-				break;
-			case LEFT: // West (A)
-				if (!anyMap.isWall(mylocation[0], (mylocation[1] + 1)))
-				{
-					mylocation[1] += 1;
-				}
-				break;
-			case DOWN: // South (S)
-				if (!anyMap.isWall((mylocation[0] - 1), mylocation[1]))
-				{
-					mylocation[0] += 1;
-				}
-				break;
+                    mylocation[1] += 1;
 		}
+		break;
+            case UP: // North (W)
+		if (!anyMap.isWall((mylocation[0] - 1), mylocation[1]))
+		{
+                    mylocation[0] += 1;
+		}
+		break;
+            case LEFT: // West (A)
+		if (!anyMap.isWall(mylocation[0], (mylocation[1] + 1)))
+		{
+                    mylocation[1] += 1;
+		}
+		break;
+            case DOWN: // South (S)
+		if (!anyMap.isWall((mylocation[0] - 1), mylocation[1]))
+		{
+                    mylocation[0] += 1;
+		}
+		break;
 	}
-
+    }
+    
+    /*
+     * Directions' field anyDirection represents the current direction
+     */
+    private Direction anyDirection;
 }

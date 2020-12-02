@@ -1,5 +1,5 @@
 /*
- * @author David Thornton
+ * @author David Thornton/Laura Estep
  * Entity.java
  * CS 321 Team 9 Fall 2020
  * Creates the Entity class

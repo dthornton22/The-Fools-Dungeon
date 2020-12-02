@@ -1,5 +1,5 @@
 /*
- * @author ??
+ * @author ???, move() by Laura Estep
  * Directions.java
  * CS 321 Team 9 Fall 2020
  * Creates the Directions class
